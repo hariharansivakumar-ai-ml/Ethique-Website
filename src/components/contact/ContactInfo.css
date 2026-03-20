@@ -1,0 +1,17 @@
+.contact-info-card {
+    border: 1px solid rgba(19, 160, 120, 0.05);
+}
+
+.contact-info-icon {
+    box-shadow: 0 10px 20px rgba(10, 26, 47, 0.05);
+}
+
+.contact-info-card p {
+    word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    .contact-info-card {
+        padding: 30px;
+    }
+}

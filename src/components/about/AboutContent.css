@@ -1,0 +1,107 @@
+.about-content-section {
+    background-color: #fff;
+    position: relative;
+}
+
+.about-image-main {
+    max-width: 85%;
+}
+
+.about-image-secondary {
+    position: absolute;
+    bottom: -60px;
+    right: 0;
+    width: 63%;
+    z-index: 20;
+}
+
+.experience-badge-circular {
+    position: absolute;
+    bottom: -100px;
+    left: 20%;
+    z-index: 30;
+    width: 140px;
+    height: 140px;
+    background-color: #0e3d64;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid white;
+    box-shadow: 0 15px 35px rgba(10, 26, 47, 0.3);
+}
+
+.badge-inner {
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.badge-inner .years {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+.badge-inner .text {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.about-main-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #0e548a;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+    .about-main-title {
+        font-size: 48px;
+    }
+}
+
+.bg-dots-pattern {
+    background-image: radial-gradient(#0e548a 1.5px, transparent 1.5px);
+    background-size: 20px 20px;
+}
+
+@media (max-width: 1024px) {
+    .about-image-main {
+        max-width: 100%;
+    }
+
+    .about-image-secondary {
+        position: relative;
+        bottom: 0px;
+        right: 0;
+        width: 100%;
+        margin-top: -60px;
+        margin-left: auto;
+    }
+    
+    .experience-badge-circular {
+        bottom: 40px;
+        left: 0;
+        width: 100px;
+        height: 100px;
+    }
+
+    .badge-inner .years {
+        font-size: 24px;
+    }
+
+    .badge-inner .text {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,28 @@
+.service-grid-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card {
+    position: relative;
+    z-index: 10;
+}
+
+.service-icon-box {
+    box-shadow: 0 10px 20px rgba(10, 26, 47, 0.05);
+}
+
+.service-card:hover h3 {
+    color: var(--primary-color, #0e548a);
+}
+
+.service-card p {
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        padding: 30px;
+        border-radius: 24px;
+    }
+}

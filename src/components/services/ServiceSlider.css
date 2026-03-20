@@ -1,0 +1,45 @@
+.service-slider-section {
+    position: relative;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.service-slide-card {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: grab;
+}
+
+.service-slide-card:active {
+    cursor: grabbing;
+}
+
+.service-icon-box-green {
+    box-shadow: 0 10px 20px rgba(19, 160, 120, 0.1);
+    flex-shrink: 0;
+}
+
+.service-slide-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-slide-card:hover .service-icon-box-green {
+    background-color: #13a078;
+    color: white;
+}
+
+.slider-nav-btn {
+    cursor: pointer;
+}
+
+.slider-nav-btn:hover {
+    box-shadow: 0 10px 25px rgba(14, 84, 138, 0.3);
+}
+
+@media (max-width: 768px) {
+    .service-slide-card {
+        min-width: 300px;
+        padding: 30px;
+    }
+}

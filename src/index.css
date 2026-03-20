@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0e548a;
+  --color-primary-dark: #0d4a7a;
+  --color-dark: #0F172A;
+  --color-teal-light: #CCFBF1;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  --radius-header: 2.5rem;
+  --radius-hero: 4rem;
+}
+
+@layer base {
+  html, body {
+    @apply antialiased text-slate-900 bg-white;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+}
+
+@layer components {
+  .btn-appointment {
+    @apply px-5 py-2.5 bg-[#0e548a] text-white font-bold rounded-full hover:bg-[#0d4a7a] transition-all duration-300 flex items-center gap-2 text-xs uppercase tracking-widest;
+  }
+
+  .btn-blue {
+    @apply px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center gap-2;
+  }
+
+  .header-icon-circle {
+    @apply w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all cursor-pointer;
+  }
+
+  .nav-dot {
+    @apply w-1.5 h-1.5 rounded-full bg-primary mx-4 opacity-60;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
