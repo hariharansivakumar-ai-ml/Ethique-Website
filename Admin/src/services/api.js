@@ -47,9 +47,7 @@ export const uploadImage = (file, type = "image") => {
   const form = new FormData();
   form.append('file', file);
   form.append('type', type);
-  return api.post('/api/admin/upload', form, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  });
+  return api.post('/api/admin/upload', form);
 };
 
 // ── Media ─────────────────────────────────────────────────────
