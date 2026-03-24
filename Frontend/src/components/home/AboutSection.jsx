@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import aboutMainImg from "../../assets/about_doc_team.png";
+import aboutMainImg from "../../assets/about_doc_team.webp";
 import aboutTechImg from "../../assets/about_tech_preview.png";
 import { FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";

@@ -38,8 +38,84 @@ def get_admin_blogs(db: Session = Depends(get_db), _: str = Depends(verify_token
 
 @router.post("/api/admin/blogs", response_model=BlogResponse)
 def create_blog(data: BlogCreate, db: Session = Depends(get_db), _: str = Depends(verify_token)):
-    blog = Blog(**data.model_dump())
-    db.add(blog)
+    print(f"DEBUG: create_blog data: {data.model_dump()}")
+    try:
+        blog = Blog(**data.model_dump())
+        db.add(blog)
+        db.commit()
+        db.refresh(blog)
+        return blog
+    except Exception as e:
+        db.rollback()
+        print(f"DEBUG: create_blog error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.put("/api/admin/blogs/{blog_id}", response_model=BlogResponse)
+def update_blog(blog_id: str, data: BlogUpdate, db: Session = Depends(get_db), _: str = Depends(verify_token)):
+    try:
+        uid = uuid.UUID(blog_id)
+    except:
+        raise HTTPException(status_code=400, detail="Invalid UUID")
+
+    try:
+        blog = db.query(Blog).filter(Blog.id == uid).first()
+        if not blog:
+            raise HTTPException(status_code=404, detail="Not found")
+
+        update_data = data.model_dump(exclude_unset=True)
+        for key, value in update_data.items():
+            setattr(blog, key, value)
+
+        db.commit()
+        db.refresh(blog)
+        return blog
+    except Exception as e:
+        db.rollback()
+        print(f"DEBUG: update_blog error: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.delete("/api/admin/blogs/{blog_id}", response_model=BlogResponse)
+def delete_blog(blog_id: str, db: Session = Depends(get_db), _: str = Depends(verify_token)):
+    try:
+        uid = uuid.UUID(blog_id)
+    except:
+        raise HTTPException(status_code=400, detail="Invalid UUID")
+
+    blog = db.query(Blog).filter(Blog.id == uid).first()
+    if not blog:
+        raise HTTPException(status_code=404, detail="Not found")
+
+    blog.is_deleted = True
+    db.commit()
+    return blog
+
+@router.delete("/api/admin/blogs/{blog_id}/permanent")
+def permanent_delete(blog_id: str, db: Session = Depends(get_db), _: str = Depends(verify_token)):
+    try:
+        uid = uuid.UUID(blog_id)
+    except:
+        raise HTTPException(status_code=400, detail="Invalid UUID")
+
+    blog = db.query(Blog).filter(Blog.id == uid).first()
+    if not blog:
+        raise HTTPException(status_code=404, detail="Not found")
+
+    db.delete(blog)
+    db.commit()
+    return {"detail": "Permanently deleted"}
+
+@router.put("/api/admin/blogs/{blog_id}/restore", response_model=BlogResponse)
+def restore_blog(blog_id: str, db: Session = Depends(get_db), _: str = Depends(verify_token)):
+    try:
+        uid = uuid.UUID(blog_id)
+    except:
+        raise HTTPException(status_code=400, detail="Invalid UUID")
+
+    blog = db.query(Blog).filter(Blog.id == uid).first()
+    if not blog:
+        raise HTTPException(status_code=404, detail="Not found")
+
+    blog.is_deleted = False
     db.commit()
     db.refresh(blog)
     return blog

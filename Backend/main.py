@@ -1,5 +1,7 @@
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
@@ -10,6 +12,16 @@ from .upload import router as upload_router
 from .media import router as media_router
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 app = FastAPI()
+
+@app.exception_handler(RequestValidationError)
+async def validation_exception_handler(request: Request, exc: RequestValidationError):
+    print(f"DEBUG: Validation Error for {request.method} {request.url.path}")
+    print(f"DEBUG: Error details: {exc.errors()}")
+    print(f"DEBUG: Request body/form: {await request.form() if 'multipart/form-data' in request.headers.get('content-type', '') else await request.body()}")
+    return JSONResponse(
+        status_code=422,
+        content={"detail": exc.errors(), "body": str(exc.body)},
+    )
 
 origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:5174").split(",")
 origins = [origin.strip() for origin in origins if origin.strip()]

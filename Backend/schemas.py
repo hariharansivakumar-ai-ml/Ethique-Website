@@ -8,15 +8,35 @@ import uuid
 class BlogBase(BaseModel):
     title: str
     content: str
+    excerpt: Optional[str] = None
+    category: Optional[str] = None
+    author: Optional[str] = None
+    image_url: Optional[str] = None
+    slug: Optional[str] = None
     status: Optional[str] = "draft"
+    
+    # SEO Fields
+    seo_title: Optional[str] = None
+    seo_description: Optional[str] = None
+    seo_score: Optional[int] = 0
+    tags: Optional[str] = None
 
 class BlogCreate(BlogBase):
     pass
 
 class BlogUpdate(BaseModel):
-    title: Optional[str]
-    content: Optional[str]
-    status: Optional[str]
+    title: Optional[str] = None
+    content: Optional[str] = None
+    excerpt: Optional[str] = None
+    category: Optional[str] = None
+    author: Optional[str] = None
+    image_url: Optional[str] = None
+    slug: Optional[str] = None
+    status: Optional[str] = None
+    seo_title: Optional[str] = None
+    seo_description: Optional[str] = None
+    seo_score: Optional[int] = None
+    tags: Optional[str] = None
 
 class BlogResponse(BlogBase):
     id: uuid.UUID

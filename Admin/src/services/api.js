@@ -4,7 +4,6 @@ const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 const api = axios.create({
   baseURL: BASE_URL,
-  headers: { 'Content-Type': 'application/json' },
 });
 
 // Attach JWT token to every request
@@ -43,10 +42,10 @@ export const adminDeleteBlog = (id) => api.delete(`/api/admin/blogs/${id}`);
 export const adminRestoreBlog = (id) => api.put(`/api/admin/blogs/${id}/restore`);
 export const adminPermanentDelete = (id) => api.delete(`/api/admin/blogs/${id}/permanent`);
 
-export const uploadImage = (file, type = "image") => {
+export const uploadImage = (file, mediaType = "image") => {
   const form = new FormData();
   form.append('file', file);
-  form.append('type', type);
+  form.append('media_type', mediaType);
   return api.post('/api/admin/upload', form);
 };
 

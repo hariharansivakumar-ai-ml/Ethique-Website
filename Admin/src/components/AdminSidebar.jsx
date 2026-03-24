@@ -8,10 +8,7 @@ import {
 const navItems = [
   { label: 'Dashboard', icon: FiGrid, path: '/' },
   { label: 'All Blogs', icon: FiFileText, path: '/blogs' },
-  { label: 'Add New', icon: FiPlusCircle, path: '/new' },
   { label: 'Media Hub', icon: FiImage, path: '/media' },
-  { label: 'Drafts', icon: FiClock, path: '/drafts' },
-  { label: 'Trash', icon: FiTrash2, path: '/trash' },
 ];
 
 const SidebarContent = ({ onNavigate }) => {
@@ -89,21 +86,7 @@ const SidebarContent = ({ onNavigate }) => {
             <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: 11 }}>Administrator</p>
           </div>
         </div>
-        <a
-          href="/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'flex', alignItems: 'center', gap: '0.5rem',
-            padding: '0.45rem 0.75rem', borderRadius: 10, marginBottom: 6,
-            color: 'rgba(255,255,255,0.45)', fontSize: 12, fontWeight: 600,
-            textDecoration: 'none', transition: 'color 0.2s'
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.color = '#fff'}
-          onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.45)'}
-        >
-          <FiHome size={13} /> View Site
-        </a>
+        <div style={{ paddingBottom: '0.25rem' }} />
         <button
           onClick={handleLogout}
           style={{

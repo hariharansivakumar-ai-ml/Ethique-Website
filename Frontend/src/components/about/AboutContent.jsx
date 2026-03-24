@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiHeadphones, FiUser, FiCheck, FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import nursesImg from '../../assets/about_nurses_tablet.png';
-import patientImg from '../../assets/about_patient_care.png';
+import nursesImg from '../../assets/about_nurses_tablet.webp';
+import patientImg from '../../assets/about_doctor.webp';
 import stethoscopeImg from '../../assets/stethoscope_illustration.png';
 import './AboutContent.css';
 

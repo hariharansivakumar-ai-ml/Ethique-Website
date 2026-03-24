@@ -21,14 +21,18 @@ if token:
     import urllib.request
     
     # We will upload schemas.py as a text file but say it's an image
-    file_bytes = b"fake image content"
+    # 1x1 transparent PNG
+    file_bytes = base64.b64decode("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==")
     boundary = "----WebKitFormBoundary7MA4YWxkTrZu0gW"
     
     body = (
         f"--{boundary}\r\n"
         f"Content-Disposition: form-data; name=\"file\"; filename=\"test.png\"\r\n"
         f"Content-Type: image/png\r\n\r\n".encode('utf-8') +
-        file_bytes + b"\r\n" +
+        file_bytes + 
+        f"\r\n--{boundary}\r\n".encode('utf-8') +
+        f"Content-Disposition: form-data; name=\"type\"\r\n\r\n".encode('utf-8') +
+        f"image\r\n".encode('utf-8') +
         f"--{boundary}--\r\n".encode('utf-8')
     )
     
@@ -43,4 +47,5 @@ if token:
             print("Upload Success:", response.read().decode())
     except urllib.error.HTTPError as e:
         print("Upload failed HTTPError:", e.code, e.reason)
-        print("Error Body:", e.read().decode())
+        full_error = e.read().decode()
+        print("Error Body:", full_error)

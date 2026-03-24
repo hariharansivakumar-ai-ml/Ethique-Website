@@ -1,9 +1,8 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiBold, FiItalic, FiLink, FiType, FiHash } from 'react-icons/fi';
 
 const FloatingMenu = ({ position, onFormat, visible }) => {
-  const menuRef = useRef(null);
   const [showLinkInput, setShowLinkInput] = useState(false);
   const [url, setUrl] = useState('');
 
@@ -60,7 +59,6 @@ const FloatingMenu = ({ position, onFormat, visible }) => {
       {visible && (
         <motion.div
           key="floating-menu"
-          ref={menuRef}
           initial={{ opacity: 0, y: 10, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}

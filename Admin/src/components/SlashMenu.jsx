@@ -1,10 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiType, FiImage, FiList, FiHash } from 'react-icons/fi';
 
-const SlashMenu = ({ position, onSelect, onClose }) => {
+const SlashMenu = ({ visible, position, onSelect, onClose }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const menuRef = useRef(null);
 
   const items = [
     { id: 'h2', label: 'Heading 2', icon: <FiHash size={16} />, description: 'Medium section header' },
@@ -36,11 +35,12 @@ const SlashMenu = ({ position, onSelect, onClose }) => {
 
   return (
     <AnimatePresence>
-      <motion.div
-        ref={menuRef}
-        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.95 }}
+      {visible && (
+        <motion.div
+          key="slash-menu"
+          initial={{ opacity: 0, y: 10, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
         style={{
           position: 'fixed',
           top: position.top,
@@ -92,7 +92,8 @@ const SlashMenu = ({ position, onSelect, onClose }) => {
             </div>
           </div>
         ))}
-      </motion.div>
+        </motion.div>
+      )}
     </AnimatePresence>
   );
 };

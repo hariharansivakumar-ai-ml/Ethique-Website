@@ -3,7 +3,7 @@ import PageHero from "../components/common/PageHero";
 import BlogCard from "../components/blog/BlogCard";
 import FaqSection from "../components/common/FaqSection";
 import { blogService } from "../services/blogService";
-import blogHeroImg from "../assets/Hero image.png"; // Using existing asset for hero
+import blogHeroImg from "../assets/blog_hero_premium.png"; // Using new premium asset
 
 import { motion } from "framer-motion";
 
