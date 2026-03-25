@@ -27,10 +27,10 @@ const faqs = [
 ];
 
 const FaqSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleFaq = (index) => {
-    setActiveIndex(activeIndex === index ? -1 : index);
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (

@@ -43,10 +43,19 @@ const AboutSection = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
               }}
-              className="text-4xl md:text-5xl font-bold leading-tight mb-8"
+              className="text-4xl md:text-5xl font-bold leading-tight mb-8 text-[#0e548a]"
             >
-              <span className="text-[#0e548a]">Expert Medical Care Team</span> <br />
-              <span className="text-[#0e548a]">& Advanced Technology</span>
+              {/* Desktop View */}
+              <span className="hidden md:block">
+                Expert Medical Care Team <br />
+                & Advanced Technology
+              </span>
+              {/* Mobile View */}
+              <span className="block md:hidden">
+                Expert Medical Care <br />
+                Team & Advanced <br />
+                Technology
+              </span>
             </motion.h2>
             
             <motion.p 

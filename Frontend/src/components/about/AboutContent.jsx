@@ -9,9 +9,9 @@ import './AboutContent.css';
 
 const AboutContent = () => {
     return (
-        <section className="about-content-section py-24 overflow-hidden">
+        <section className="about-content-section py-10 lg:py-24 overflow-hidden">
             <div className="container mx-auto px-4 lg:px-20">
-                <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24 relative">
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24 relative">
                     
                     {/* Left Side: Images & Graphics */}
                     <div className="lg:w-1/2 relative">

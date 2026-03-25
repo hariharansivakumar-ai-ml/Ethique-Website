@@ -28,12 +28,12 @@ const features = [
 
 const WhyChooseUs = () => {
     return (
-        <section className="why-choose-us py-24 bg-white overflow-hidden" id="why-choose-us">
+        <section className="why-choose-us py-12 lg:py-24 bg-white overflow-hidden" id="why-choose-us">
             <div className="container mx-auto px-4 lg:px-20">
-                <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-24">
                     
                     {/* Left: Content */}
-                    <div className="lg:w-1/2 space-y-8">
+                    <div className="lg:w-1/2 space-y-6 lg:space-y-8">
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
                             </p>
                         </motion.div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 pt-2 md:pt-4">
                             {features.map((feature, index) => (
                                 <motion.div
                                     key={index}

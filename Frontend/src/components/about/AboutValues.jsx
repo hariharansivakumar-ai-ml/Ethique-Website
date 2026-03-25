@@ -6,12 +6,12 @@ import './AboutValues.css';
 
 const AboutValues = () => {
     return (
-        <section className="about-values-section py-24 relative overflow-hidden">
+        <section className="about-values-section py-10 lg:py-24 relative overflow-hidden">
             {/* Background Grid Pattern */}
             <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] -z-10" />
 
             <div className="container mx-auto px-4 lg:px-20">
-                <div className="flex flex-col lg:flex-row items-center gap-16 xl:gap-24">
+                <div className="flex flex-col lg:flex-row items-center gap-12 xl:gap-24">
 
                     {/* Left Side: Large Image */}
                     <div className="w-full lg:w-[45%]">
