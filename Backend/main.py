@@ -35,6 +35,7 @@ origins = [origin.strip() for origin in origins if origin.strip()]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
+    allow_origin_regex=r"https://sriponni-admin-website-xb3s.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
