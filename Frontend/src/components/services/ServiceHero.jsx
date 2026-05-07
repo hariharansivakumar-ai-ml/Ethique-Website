@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import heroBg from '../../assets/indian_services_hero_consultation.png';
+import heroBg from '../../assets/indian_services_hero_consultation.webp';
 import './ServiceHero.css';
 
 const ServiceHero = ({ title, subtitle }) => {

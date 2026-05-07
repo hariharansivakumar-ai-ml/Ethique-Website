@@ -8,13 +8,13 @@ import {
 } from "react-icons/fa";
 
 // Import images
-import emergencyImg from "../../assets/service_emergency.png";
-import diagnosticsImg from "../../assets/service_diagnostics.png";
-import consultationImg from "../../assets/service_consultation.png";
-import cardiologyImg from "../../assets/service_cardiology.png";
-import orthopaedicsImg from "../../assets/service_orthopaedics.png";
-import pediatricsImg from "../../assets/service_pediatrics.png";
-import neurologyImg from "../../assets/service_neurology.png";
+import emergencyImg from "../../assets/service_emergency.webp";
+import diagnosticsImg from "../../assets/service_diagnostics.webp";
+import consultationImg from "../../assets/service_consultation.webp";
+import cardiologyImg from "../../assets/service_cardiology.webp";
+import orthopaedicsImg from "../../assets/service_orthopaedics.webp";
+import pediatricsImg from "../../assets/service_pediatrics.webp";
+import neurologyImg from "../../assets/service_neurology.webp";
 
 import "./ServicesSection.css";
 

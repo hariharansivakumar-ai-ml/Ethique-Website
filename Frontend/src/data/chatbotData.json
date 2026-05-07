@@ -1,0 +1,29 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What are your hospital hours?",
+      "answer": "We are open **24/7 for emergency services**. Our general consultation and outpatient departments (OPD) are open from **9:00 AM to 9:00 PM**, Monday through Saturday."
+    },
+    {
+      "id": 2,
+      "question": "How can I book an appointment?",
+      "answer": "You can book an appointment by clicking the **'MAKE AN APPOINTMENT'** button at the top of our website, or by calling us directly at **(+91) 78691 51300**."
+    },
+    {
+      "id": 3,
+      "question": "Where is Sri Ponni Medical Centre located?",
+      "answer": "We are located in **Velur, Namakkal**. You can find our exact location on the **'Contact Us'** page, which includes an interactive map for directions."
+    },
+    {
+      "id": 4,
+      "question": "What medical services do you provide?",
+      "answer": "We offer a wide range of services including **General Medicine, Emergency Care, Lab Services, and Specialized Consultations**. Please visit our **'Services'** page for a full list."
+    },
+    {
+      "id": 5,
+      "question": "Is there 24/7 emergency support?",
+      "answer": "Yes, Sri Ponni Medical Centre provides **24/7 emergency care** and ambulance support. Your health and safety are our top priorities at all times."
+    }
+  ]
+}

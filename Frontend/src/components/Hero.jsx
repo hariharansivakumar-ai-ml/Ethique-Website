@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import heroImg1 from "../assets/Hero image.png";
-import heroImg2 from "../assets/Heroimg2.jpg";
-import heroImg3 from "../assets/Heroimg3.jpg";
+import heroImg1 from "../assets/Hero image.webp";
+import heroImg2 from "../assets/Heroimg2.webp";
+import heroImg3 from "../assets/Heroimg3.webp";
 
 const slides = [
   {

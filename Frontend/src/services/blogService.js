@@ -1,4 +1,6 @@
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+import { config } from '../config';
+
+const API_URL = config.API_URL;
 
 // ── Public API (used by main site) ────────────────────────────────────────────
 

@@ -3,10 +3,10 @@ from sqlalchemy.orm import Session
 from typing import List
 import uuid
 
-from .database import get_db
-from .models import Blog
-from .schemas import *
-from .auth import verify_token
+from database import get_db
+from models import Blog
+from schemas import *
+from auth import verify_token
 
 router = APIRouter(tags=["blogs"])
 
@@ -16,7 +16,7 @@ def get_blogs(db: Session = Depends(get_db)):
     return db.query(Blog).filter(
         Blog.status == "published",
         Blog.is_deleted == False
-    ).all()
+    ).order_by(Blog.created_at.desc()).all()
 
 @router.get("/api/blogs/{blog_id}", response_model=BlogResponse)
 def get_blog(blog_id: str, db: Session = Depends(get_db)):

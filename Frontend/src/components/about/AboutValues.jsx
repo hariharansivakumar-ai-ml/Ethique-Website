@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiEye, FiTarget } from 'react-icons/fi';
-import valuesImg from '../../assets/about_values_medical.png';
+import valuesImg from '../../assets/about_values_medical.webp';
 import './AboutValues.css';
 
 const AboutValues = () => {

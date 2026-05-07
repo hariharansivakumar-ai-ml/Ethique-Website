@@ -5,19 +5,25 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 
-from .database import Base, engine
-from .blog import router as blog_router
-from .auth import router as auth_router
-from .upload import router as upload_router
-from .media import router as media_router
+from database import Base, engine
+from blog import router as blog_router
+from auth import router as auth_router
+from upload import router as upload_router
+from media import router as media_router
+from contact import router as contact_router
+from event import router as event_router
+from subscription import router as subscription_router
+import models
+
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "the server is running"}
+
 @app.exception_handler(RequestValidationError)
 async def validation_exception_handler(request: Request, exc: RequestValidationError):
-    print(f"DEBUG: Validation Error for {request.method} {request.url.path}")
-    print(f"DEBUG: Error details: {exc.errors()}")
-    print(f"DEBUG: Request body/form: {await request.form() if 'multipart/form-data' in request.headers.get('content-type', '') else await request.body()}")
     return JSONResponse(
         status_code=422,
         content={"detail": exc.errors(), "body": str(exc.body)},
@@ -34,9 +40,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+from db_sync import sync_db
+sync_db()
 Base.metadata.create_all(bind=engine)
 
 app.include_router(auth_router)
 app.include_router(blog_router)
 app.include_router(upload_router)
 app.include_router(media_router)
+app.include_router(contact_router)
+app.include_router(event_router)
+app.include_router(subscription_router)

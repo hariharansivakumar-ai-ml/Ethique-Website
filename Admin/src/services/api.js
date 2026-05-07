@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { config } from '../config';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const BASE_URL = config.API_URL;
 
 const api = axios.create({
   baseURL: BASE_URL,
@@ -28,6 +29,9 @@ api.interceptors.response.use(
 // ── Auth ─────────────────────────────────────────────────────
 export const login = (username, password) =>
   api.post('/api/auth/login', { username, password });
+
+export const verifyToken = () =>
+  api.get('/api/auth/me');
 
 // ── Public Blogs ──────────────────────────────────────────────
 export const getPublishedBlogs = () => api.get('/api/blogs');

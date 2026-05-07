@@ -1,7 +1,7 @@
 import PageHero from '../components/common/PageHero';
 import ContactInfo from '../components/contact/ContactInfo';
 import ContactForm from '../components/contact/ContactForm';
-import contactHeroImg from '../assets/contact hero.png';
+import contactHeroImg from '../assets/contact hero.webp';
 import SEO from '../components/common/SEO';
 import FaqSection from '../components/common/FaqSection';
 

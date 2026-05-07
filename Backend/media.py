@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List, Optional
-from .database import get_db
-from .models import Media
-from .schemas import MediaResponse
-from .auth import verify_token
+from database import get_db
+from models import Media
+from schemas import MediaResponse
+from auth import verify_token
 import cloudinary.uploader
 import uuid
 

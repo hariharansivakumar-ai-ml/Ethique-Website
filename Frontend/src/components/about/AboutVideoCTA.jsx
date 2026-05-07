@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiPlay, FiShield, FiChevronRight } from 'react-icons/fi';
-import videoBg from '../../assets/about_video_cta_bg.png';
+import videoBg from '../../assets/about_video_cta_bg.webp';
 import './AboutVideoCTA.css';
 
 const AboutVideoCTA = () => {

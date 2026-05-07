@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaYoutube } from "react-icons/fa";
-import logoImg from "../../assets/Sri-Ponni-Medical-Centre-scaled.png";
+import logoImg from "../../assets/Sri-Ponni-Medical-Centre-scaled.webp";
 import "./Footer.css";
 
 const Footer = () => {

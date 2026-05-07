@@ -14,7 +14,7 @@ const BlogCard = ({ blog }) => {
       <div className="relative h-64 overflow-hidden bg-gray-100" aria-hidden="true">
         <img
           src={blog.image_url || blog.image}
-          alt=""
+          alt={blog.image_alt || blog.title}
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         <div className="absolute top-4 left-4">
@@ -41,7 +41,18 @@ const BlogCard = ({ blog }) => {
         </h3>
         
         <p className="text-gray-600 leading-relaxed mb-6 line-clamp-3 text-sm">
-          {blog.excerpt}
+          {blog.content 
+            ? blog.content
+                .replace(/<[^>]*>/g, ' ')
+                .replace(/&nbsp;|\u00A0/g, ' ')
+                .replace(/&amp;/g, '&')
+                .replace(/&lt;/g, '<')
+                .replace(/&gt;/g, '>')
+                .replace(/&quot;/g, '"')
+                .replace(/&#39;/g, "'")
+                .trim()
+                .substring(0, 150) + '...' 
+            : ''}
         </p>
 
         <div className="mt-auto">

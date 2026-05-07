@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiCheck, FiUsers, FiClock, FiShield } from 'react-icons/fi';
-import chooseImg from '../../assets/why_choose_us.png'; // Updated with unique asset
+import chooseImg from '../../assets/why_choose_us.webp'; // Updated with unique asset
 
 const features = [
     {

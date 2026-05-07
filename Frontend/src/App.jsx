@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import Events from "./pages/Events";
+import EventDetail from "./pages/EventDetail";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import AdminLayout from "./components/admin/AdminLayout";
@@ -14,6 +16,8 @@ import BlogEditor from "./pages/admin/BlogEditor";
 import Login from "./pages/admin/Login";
 import { Facilities, Gallery } from "./pages/PlaceholderPages";
 import ScrollToTop from "./components/common/ScrollToTop";
+import ChatBot from "./components/common/ChatBot";
+import PopupWidget from "./components/common/PopupWidget";
 import "./App.css";
 
 function App() {
@@ -45,6 +49,8 @@ function App() {
           <Route path="/facilities" element={<Facilities />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/events/:id" element={<EventDetail />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
           
@@ -57,6 +63,8 @@ function App() {
           </Route>
         </Routes>
       </main>
+      <ChatBot />
+      <PopupWidget />
       <Footer />
     </Router>
   );

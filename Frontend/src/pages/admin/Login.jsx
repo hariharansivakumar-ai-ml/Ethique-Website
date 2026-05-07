@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiLock, FiUser, FiArrowRight } from 'react-icons/fi';
-import logoImg from '../../assets/Sri-Ponni-Medical-Centre-scaled.png';
+import logoImg from '../../assets/Sri-Ponni-Medical-Centre-scaled.webp';
 
 const Login = () => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });

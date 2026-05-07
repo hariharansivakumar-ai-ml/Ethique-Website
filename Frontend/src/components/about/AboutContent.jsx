@@ -4,7 +4,7 @@ import { FiHeadphones, FiUser, FiCheck, FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import nursesImg from '../../assets/about_nurses_tablet.webp';
 import patientImg from '../../assets/about_doctor.webp';
-import stethoscopeImg from '../../assets/stethoscope_illustration.png';
+import stethoscopeImg from '../../assets/stethoscope_illustration.webp';
 import './AboutContent.css';
 
 const AboutContent = () => {

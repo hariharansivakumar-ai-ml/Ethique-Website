@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPhone, FiArrowUpRight, FiMenu, FiX, FiMail } from "react-icons/fi";
-import logoImg from "../assets/Sri-Ponni-Medical-Centre-scaled.png";
+import logoImg from "../assets/Sri-Ponni-Medical-Centre-scaled.webp";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,6 +21,7 @@ const Header = () => {
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Services", path: "/services" },
+    { name: "Events", path: "/events" },
     { name: "Blogs", path: "/blog" },
     { name: "Contact Us", path: "/contact" },
   ];

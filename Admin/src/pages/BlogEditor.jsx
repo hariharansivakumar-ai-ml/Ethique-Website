@@ -40,28 +40,47 @@ const BlogEditor = () => {
   };
 
   const [form, setForm] = useState({
-    title: '', excerpt: '', content: '', category: 'General Medicine',
-    status: 'draft', author: 'Dr. Medical Team', image_url: '', slug: '',
-    seo_title: '', seo_description: '', seo_score: 0, tags: ''
+    title: '', content: '', category: 'General Medicine',
+    status: 'draft', author: 'Dr. Medical Team', image_url: '', image_alt: '', slug: '',
+    seo_title: '', seo_description: '', focus_keyword: '', seo_score: 0, tags: ''
   });
 
   useEffect(() => {
     const score = calculateSeoScore();
     setForm(prev => ({ ...prev, seo_score: score }));
-  }, [form.title, form.content, form.seo_title, form.seo_description]);
+  }, [form.title, form.content, form.seo_title, form.seo_description, form.focus_keyword, form.slug]);
 
   const calculateSeoScore = () => {
     let score = 0;
-    if (form.title.length > 20) score += 10;
-    if (form.content.length > 300) score += 20;
-    if (form.seo_title.length >= 50 && form.seo_title.length <= 60) score += 20;
-    else if (form.seo_title.length > 0) score += 10;
-    if (form.seo_description.length >= 120 && form.seo_description.length <= 160) score += 20;
-    else if (form.seo_description.length > 0) score += 10;
-    if (form.image_url) score += 10;
-    if (form.excerpt.length > 50) score += 10;
-    if (form.slug.length > 5) score += 10;
-    if (form.tags.length > 0) score += 5;
+    const kw = form.focus_keyword.toLowerCase().trim();
+
+    // 1. Length & Basic Quality (40 points)
+    if (form.title.length > 20) score += 5;
+    if (form.content.replace(/<[^>]*>/g, '').length > 300) score += 10;
+    if (form.seo_title.length >= 50 && form.seo_title.length <= 60) score += 10;
+    else if (form.seo_title.length > 0) score += 5;
+    if (form.seo_description.length >= 120 && form.seo_description.length <= 160) score += 10;
+    else if (form.seo_description.length > 0) score += 5;
+    if (form.image_url) score += 5;
+    if (form.slug.length > 5) score += 5;
+    if (kw) {
+      const title = form.title.toLowerCase();
+      const content = form.content.toLowerCase();
+      const slug = form.slug.toLowerCase();
+      const seoTitle = form.seo_title.toLowerCase();
+      const seoDesc = form.seo_description.toLowerCase();
+
+      if (title.includes(kw)) score += 15;
+      if (content.includes(kw)) score += 15;
+      if (slug.includes(kw)) score += 10;
+      if (seoTitle.includes(kw)) score += 10;
+      if (seoDesc.includes(kw)) score += 10;
+    } else {
+      // If no keyword, add some points for other metadata (max 40 + 15 = 55)
+      if (form.slug.length > 5) score += 5;
+      if (form.tags.length > 0) score += 10;
+    }
+
     return Math.min(score, 100);
   };
   const [uploading, setUploading] = useState(false);
@@ -76,15 +95,16 @@ const BlogEditor = () => {
         const blog = res.data.find(b => String(b.id) === String(id));
         if (blog) setForm({ 
           title: blog.title || '', 
-          excerpt: blog.excerpt || '', 
           content: blog.content || '', 
           category: blog.category || 'General Medicine', 
           status: blog.status || 'draft', 
           author: blog.author || 'Dr. Medical Team', 
           image_url: blog.image_url || '',
+          image_alt: blog.image_alt || '',
           slug: blog.slug || '',
           seo_title: blog.seo_title || '',
           seo_description: blog.seo_description || '',
+          focus_keyword: blog.focus_keyword || '',
           seo_score: blog.seo_score || 0,
           tags: blog.tags || ''
         });
@@ -234,13 +254,6 @@ const BlogEditor = () => {
               </div>
             </div>
 
-            {/* Short Summary */}
-            <div style={{ background: '#fff', borderRadius: 20, padding: '1.5rem', border: '1px solid #f1f5f9' }}>
-              <label style={{ display: 'block', fontSize: 11, fontWeight: 800, color: '#64748b', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Short Summary *</label>
-              <textarea name="excerpt" required rows={3} value={form.excerpt} onChange={handleChange} placeholder="Write a brief summary..."
-                style={{ ...inputStyle, minHeight: 80, resize: 'none' }} />
-            </div>
-
             {/* Content Editor */}
             <div style={{ background: '#fff', borderRadius: 20, padding: '1.5rem', border: '1px solid #f1f5f9', position: 'relative' }}>
               <label style={{ fontSize: 11, fontWeight: 800, color: '#64748b', textTransform: 'uppercase', display: 'block', marginBottom: '1rem' }}>Article Content *</label>
@@ -264,6 +277,12 @@ const BlogEditor = () => {
               </div>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                <div>
+                  <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: '#64748b', marginBottom: '0.4rem' }}>Focus Keyword</label>
+                  <input name="focus_keyword" type="text" value={form.focus_keyword} onChange={handleChange} placeholder="Main topic e.g. Heart Care..." style={inputStyle} />
+                  <p style={{ fontSize: 10, color: '#94a3b8', marginTop: 4 }}>This is used to calculate your SEO score.</p>
+                </div>
+                
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
                     <label style={{ fontSize: 11, fontWeight: 700, color: '#64748b' }}>SEO Title</label>
@@ -356,7 +375,19 @@ const BlogEditor = () => {
               {form.image_url ? (
                 <div style={{ position: 'relative' }}>
                   <img src={form.image_url} alt="Featured" style={{ width: '100%', height: 160, objectFit: 'cover', borderRadius: 12 }} />
-                  <button type="button" onClick={() => setForm(p => ({ ...p, image_url: '' }))} style={{ position: 'absolute', top: 8, right: 8, background: 'rgba(0,0,0,0.6)', border: 'none', borderRadius: 8, padding: '0.3rem', color: '#fff', cursor: 'pointer' }}><FiX size={14} /></button>
+                  <button type="button" onClick={() => setForm(p => ({ ...p, image_url: '', image_alt: '' }))} style={{ position: 'absolute', top: 8, right: 8, background: 'rgba(0,0,0,0.6)', border: 'none', borderRadius: 8, padding: '0.3rem', color: '#fff', cursor: 'pointer' }}><FiX size={14} /></button>
+                  
+                  <div style={{ marginTop: '0.75rem' }}>
+                    <label style={{ display: 'block', fontSize: 10, fontWeight: 700, color: '#64748b', marginBottom: '0.25rem' }}>Image Alt Text (SEO)</label>
+                    <input 
+                      name="image_alt" 
+                      type="text" 
+                      value={form.image_alt} 
+                      onChange={handleChange} 
+                      placeholder="Describe this image for search engines..." 
+                      style={{ ...inputStyle, padding: '0.5rem 0.75rem', fontSize: 12 }} 
+                    />
+                  </div>
                 </div>
               ) : activeTab === 'upload' ? (
                 <div onClick={() => document.getElementById('featured-upload').click()} style={{ border: '2px dashed #e2e8f0', borderRadius: 14, padding: '2rem 1rem', textAlign: 'center', cursor: 'pointer', background: '#f8fafc' }}>
@@ -378,20 +409,36 @@ const BlogEditor = () => {
                   }} />
                 </div>
               ) : (
-                <div style={{ height: 180, overflowY: 'auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', background: '#f8fafc', padding: '0.5rem', borderRadius: 12 }}>
-                  {loadingLibrary ? (
-                    <div style={{ gridColumn: 'span 2', textAlign: 'center', padding: '2rem', fontSize: 11, color: '#94a3b8' }}>Loading...</div>
-                  ) : libraryItems.map(item => (
-                    <div 
-                      key={item.id} 
-                      onClick={() => setForm(prev => ({ ...prev, image_url: item.url }))}
-                      style={{ cursor: 'pointer', borderRadius: 8, overflow: 'hidden', border: '2px solid transparent' }}
-                      onMouseEnter={e => e.currentTarget.style.border = '2px solid #0e9f6e'}
-                      onMouseLeave={e => e.currentTarget.style.border = '2px solid transparent'}
-                    >
-                      <img src={item.url} alt="library" style={{ width: '100%', height: 80, objectFit: 'cover' }} />
-                    </div>
-                  ))}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <div style={{ position: 'relative' }}>
+                    <FiSearch size={14} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: '#94a3b8' }} />
+                    <input 
+                      type="text" 
+                      placeholder="Search gallery..." 
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      style={{ ...inputStyle, padding: '0.4rem 0.6rem 0.4rem 2rem', fontSize: 11, borderRadius: 10 }} 
+                    />
+                  </div>
+                  <div style={{ height: 320, overflowY: 'auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(130px, 1fr))', gap: '0.75rem', background: '#f8fafc', padding: '0.75rem', borderRadius: 12, border: '1px solid #e2e8f0' }}>
+                    {loadingLibrary ? (
+                      <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', fontSize: 11, color: '#94a3b8' }}>Loading library...</div>
+                    ) : (libraryItems.filter(item => item.url.toLowerCase().includes(searchQuery.toLowerCase())).length === 0) ? (
+                      <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '3rem', fontSize: 11, color: '#94a3b8' }}>No images found</div>
+                    ) : libraryItems.filter(item => item.url.toLowerCase().includes(searchQuery.toLowerCase())).map(item => (
+                      <motion.div 
+                        key={item.id} 
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => setForm(prev => ({ ...prev, image_url: item.url }))}
+                        style={{ cursor: 'pointer', borderRadius: 10, overflow: 'hidden', border: '2px solid transparent', background: '#fff', boxShadow: '0 2px 4px rgba(0,0,0,0.05)', height: 100 }}
+                        onMouseEnter={e => e.currentTarget.style.borderColor = '#0e9f6e'}
+                        onMouseLeave={e => e.currentTarget.style.borderColor = 'transparent'}
+                      >
+                        <img src={item.url} alt="library" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

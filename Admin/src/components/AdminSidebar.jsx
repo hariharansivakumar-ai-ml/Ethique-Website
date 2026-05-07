@@ -2,13 +2,16 @@ import { useState } from 'react';
 import { useNavigate, useLocation, Link, Outlet } from 'react-router-dom';
 import {
   FiGrid, FiFileText, FiPlusCircle, FiClock, FiTrash2,
-  FiLogOut, FiHome, FiMenu, FiX, FiBarChart2, FiImage
+  FiLogOut, FiHome, FiMenu, FiX, FiBarChart2, FiImage, FiMail, FiCalendar
 } from 'react-icons/fi';
 
 const navItems = [
   { label: 'Dashboard', icon: FiGrid, path: '/' },
   { label: 'All Blogs', icon: FiFileText, path: '/blogs' },
   { label: 'Media Hub', icon: FiImage, path: '/media' },
+  { label: 'Events Hub', icon: FiCalendar, path: '/events' },
+  { label: 'Messages', icon: FiMail, path: '/messages' },
+  { label: 'Subscriptions', icon: FiMail, path: '/subscriptions' },
 ];
 
 const SidebarContent = ({ onNavigate }) => {

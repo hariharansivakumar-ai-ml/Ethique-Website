@@ -1,7 +1,7 @@
 import { useState, useRef, useMemo, useEffect } from 'react';
 import ReactQuill, { Quill } from 'react-quill-new';
 import 'react-quill-new/dist/quill.bubble.css';
-import { Heading1, Heading2, Heading3, Image as ImageIcon, List, Quote, CheckSquare, Code, X, Settings } from 'lucide-react';
+import { Heading1, Heading2, Heading3, Image as ImageIcon, List, Quote, CheckSquare, Code, X, Settings, Trash2 } from 'lucide-react';
 
 // --- Custom Image Blot ---
 const ImageBlot = Quill.import('formats/image');
@@ -122,6 +122,8 @@ const SlashMenu = ({ position, onSelect, onClose }) => {
         { id: 'h1', label: 'Heading 1', icon: Heading1, desc: 'Big section heading' },
         { id: 'h2', label: 'Heading 2', icon: Heading2, desc: 'Medium section heading' },
         { id: 'h3', label: 'Heading 3', icon: Heading3, desc: 'Small section heading' },
+        { id: 'h4', label: 'Heading 4', icon: Heading2, desc: 'Subsection heading' },
+        { id: 'h5', label: 'Heading 5', icon: Heading3, desc: 'Small subsection heading' },
         { id: 'image', label: 'Image', icon: ImageIcon, desc: 'Upload an image' },
         { id: 'list-ul', label: 'Bullet List', icon: List, desc: 'Create a simple list' },
         { id: 'list-ol', label: 'Numbered List', icon: CheckSquare, desc: 'Create a numbered list' },
@@ -176,7 +178,7 @@ const SlashMenu = ({ position, onSelect, onClose }) => {
 };
 
 // --- Image Settings Modal ---
-const ImageSettingsModal = ({ settings, position, onClose, onSave }) => {
+const ImageSettingsModal = ({ settings, position, onClose, onSave, onRemove }) => {
     const [alt, setAlt] = useState(settings.alt || '');
     const [title, setTitle] = useState(settings.title || '');
     const [width, setWidth] = useState(settings.width || '');
@@ -267,6 +269,32 @@ const ImageSettingsModal = ({ settings, position, onClose, onSave }) => {
                 <button type="button" onClick={() => onSave({ alt, width, align })} style={{ width: '100%', marginTop: '0.5rem', padding: '0.75rem 0', background: 'linear-gradient(to right, #2563eb, #4f46e5)', color: '#fff', fontSize: '0.875rem', fontWeight: 700, borderRadius: '0.75rem', border: 'none', cursor: 'pointer', boxShadow: '0 10px 15px -3px rgba(191, 219, 254, 1)', transition: 'all 0.2s' }} onMouseOver={e => e.currentTarget.style.transform = 'translateY(-1px)'} onMouseOut={e => e.currentTarget.style.transform = 'translateY(0)'}>
                     Save Properties
                 </button>
+
+                <button 
+                  type="button" 
+                  onClick={onRemove} 
+                  style={{ 
+                    width: '100%', 
+                    marginTop: '0.75rem', 
+                    padding: '0.6rem 0', 
+                    background: '#fff', 
+                    color: '#ef4444', 
+                    fontSize: '0.8125rem', 
+                    fontWeight: 600, 
+                    borderRadius: '0.75rem', 
+                    border: '1px solid #fee2e2', 
+                    cursor: 'pointer', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    gap: '0.5rem',
+                    transition: 'all 0.2s' 
+                  }} 
+                  onMouseOver={e => { e.currentTarget.style.background = '#fef2f2'; e.currentTarget.style.borderColor = '#fecaca'; }} 
+                  onMouseOut={e => { e.currentTarget.style.background = '#fff'; e.currentTarget.style.borderColor = '#fee2e2'; }}
+                >
+                    <Trash2 size={14} /> Remove Image
+                </button>
             </div>
         </div>
     );
@@ -309,7 +337,7 @@ const RichTextEditor = ({ content, onChange, onImageUpload, height = "750px" }) 
     const modules = useMemo(() => ({
         toolbar: [
             ['bold', 'italic', 'underline', 'strike'],
-            [{ 'header': [1, 2, 3, false] }],
+            [{ 'header': [1, 2, 3, 4, 5, false] }],
             [{ 'color': [] }, { 'background': [] }],
             [{ 'align': [] }],
             ['link', 'image', 'video'],
@@ -365,6 +393,8 @@ const RichTextEditor = ({ content, onChange, onImageUpload, height = "750px" }) 
             case 'h1': quill.format('header', 1); break;
             case 'h2': quill.format('header', 2); break;
             case 'h3': quill.format('header', 3); break;
+            case 'h4': quill.format('header', 4); break;
+            case 'h5': quill.format('header', 5); break;
             case 'list-ul': quill.format('list', 'bullet'); break;
             case 'list-ol': quill.format('list', 'ordered'); break;
             case 'blockquote': quill.format('blockquote', true); break;
@@ -452,6 +482,16 @@ const RichTextEditor = ({ content, onChange, onImageUpload, height = "750px" }) 
         setTargetImage(null);
     };
 
+    const handleRemoveImage = () => {
+        if (!targetImage) return;
+        const quill = quillRef.current.getEditor();
+        const index = quill.getIndex(targetImage.blot);
+        if (index >= 0) {
+            quill.deleteText(index, 1, 'user');
+        }
+        setTargetImage(null);
+    };
+
     return (
         <div ref={containerRef} className="rich-text-editor-container bg-white rounded-lg relative overflow-visible" onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} onClick={handleEditorClick}>
             <ReactQuill
@@ -480,6 +520,7 @@ const RichTextEditor = ({ content, onChange, onImageUpload, height = "750px" }) 
                     position={targetImage.position}
                     onClose={() => setTargetImage(null)}
                     onSave={handleSaveImageSettings}
+                    onRemove={handleRemoveImage}
                 />
             )}
 
@@ -538,6 +579,8 @@ const RichTextEditor = ({ content, onChange, onImageUpload, height = "750px" }) 
                 .ql-editor h1 { font-size: 2.5em; font-weight: 800; margin-top: 1em; margin-bottom: 0.5em; }
                 .ql-editor h2 { font-size: 2em; font-weight: 700; margin-top: 1em; margin-bottom: 0.5em; }
                 .ql-editor h3 { font-size: 1.75em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; }
+                .ql-editor h4 { font-size: 1.5em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; }
+                .ql-editor h5 { font-size: 1.25em; font-weight: 600; margin-top: 1em; margin-bottom: 0.5em; }
                 .ql-editor img { cursor: pointer; transition: opacity 0.2s; outline: 3px solid transparent; outline-offset: 4px; border-radius: 0.5rem; }
                 .ql-editor img:hover { opacity: 0.9; }
                 .ql-editor blockquote { border-left: 4px solid #E5E7EB; padding-left: 1rem; color: #6B7280; font-style: italic; }

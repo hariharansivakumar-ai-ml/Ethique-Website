@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaQuoteRight, FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import doctorImg from "../../assets/indian_testimonial_doctor.png";
-import p1 from "../../assets/patient_1.png";
-import p2 from "../../assets/patient_2.png";
-import p3 from "../../assets/patient_3.png";
+import doctorImg from "../../assets/indian_testimonial_doctor.webp";
+import p1 from "../../assets/patient_1.webp";
+import p2 from "../../assets/patient_2.webp";
+import p3 from "../../assets/patient_3.webp";
 import "./TestimonialSection.css";
 
 const testimonials = [

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FiSearch, FiMenu, FiX, FiChevronDown, FiMail, FiMapPin } from "react-icons/fi";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import { MdOutlineDoubleArrow } from "react-icons/md";
-import logo from "../../assets/Sri-Ponni-Medical-Centre-scaled.png";
+import logo from "../../assets/Sri-Ponni-Medical-Centre-scaled.webp";
 import "./Navbar.css";
 
 const NAV_LINKS = [

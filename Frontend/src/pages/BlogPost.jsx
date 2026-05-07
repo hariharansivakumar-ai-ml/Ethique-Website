@@ -4,6 +4,7 @@ import { FiArrowLeft, FiCalendar, FiUser, FiTag, FiShare2 } from "react-icons/fi
 import { motion, useScroll, useSpring } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import FaqSection from "../components/common/FaqSection";
+import SEO from "../components/common/SEO";
 import { blogService } from "../services/blogService";
 
 const BlogPost = () => {
@@ -72,6 +73,12 @@ const BlogPost = () => {
         style={{ scaleX }}
       />
 
+      <SEO 
+        title={blog.seo_title || blog.title}
+        description={blog.seo_description || blog.content?.replace(/<[^>]*>/g, ' ').substring(0, 160)}
+        keywords={blog.focus_keyword || blog.tags}
+      />
+
       <div className="max-w-7xl mx-auto">
         {/* Back Link */}
         <Link
@@ -94,7 +101,7 @@ const BlogPost = () => {
                 <div className="relative w-full">
                   <img
                     src={blog.image_url || blog.image}
-                    alt={blog.title}
+                    alt={blog.image_alt || blog.title}
                     className="w-full object-cover max-h-[500px]"
                   />
                 </div>
@@ -174,7 +181,7 @@ const BlogPost = () => {
                 {recentBlogs.map(item => (
                   <Link key={item.id} to={`/blog/${item.id}`} aria-label={`Read article: ${item.title}`} className="flex gap-4 group no-underline rounded-xl p-2 -mx-2 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary transition-all">
                     <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-gray-100" aria-hidden="true">
-                      <img src={item.image_url || item.image} alt="" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <img src={item.image_url || item.image} alt={item.image_alt || item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                     </div>
                     <div className="flex flex-col justify-center min-w-0">
                       <h5 className="text-sm font-bold text-gray-900 group-hover:text-primary transition-colors line-clamp-2 leading-snug mb-1">
@@ -240,14 +247,26 @@ const BlogPost = () => {
           .blog-content h1 { font-size: 2.25rem; }
           .blog-content h2 { font-size: 1.75rem; }
           .blog-content h3 { font-size: 1.25rem; }
+          .blog-content h4 { font-size: 1.125rem; }
+          .blog-content h5 { font-size: 1rem; }
 
-          .blog-content ul, .blog-content ol {
+          .blog-content ul {
+              list-style-type: disc !important;
               margin-bottom: 1.5rem;
               padding-left: 1.5rem;
+              margin-left: 1.5rem;
+          }
+
+          .blog-content ol {
+              list-style-type: decimal !important;
+              margin-bottom: 1.5rem;
+              padding-left: 1.5rem;
+              margin-left: 1.5rem;
           }
 
           .blog-content li {
               margin-bottom: 0.5rem;
+              display: list-item !important;
           }
 
           .blog-content img {

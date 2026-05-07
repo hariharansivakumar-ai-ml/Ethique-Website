@@ -48,10 +48,11 @@ const Dashboard = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const total = blogs.length;
-  const published = blogs.filter(b => b.status === 'published').length;
-  const drafts = blogs.filter(b => b.status === 'draft').length;
-  const recent = blogs.slice(0, 6);
+  const activeBlogs = blogs.filter(b => !b.is_deleted);
+  const total = activeBlogs.length;
+  const published = activeBlogs.filter(b => b.status === 'published').length;
+  const drafts = activeBlogs.filter(b => b.status === 'draft').length;
+  const recent = activeBlogs.slice(0, 6);
 
   const statCards = [
     {

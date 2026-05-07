@@ -2,9 +2,6 @@ import { Navigate, Outlet } from 'react-router-dom';
 import AdminSidebar from './AdminSidebar';
 
 const AdminLayout = () => {
-  const token = localStorage.getItem('admin_token');
-  if (!token) return <Navigate to="/login" replace />;
-
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: '#f8fafc' }}>
       <AdminSidebar />

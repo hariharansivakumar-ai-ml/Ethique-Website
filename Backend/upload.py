@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends, UploadFile, File, Form, HTTPException
 from typing import Optional
 from sqlalchemy.orm import Session
-from .database import get_db
-from .models import Media
-from .auth import verify_token
-from .schemas import ImageUploadResponse
+from database import get_db
+from models import Media
+from auth import verify_token
+from schemas import ImageUploadResponse
 import cloudinary
 import cloudinary.uploader
 import os
@@ -67,30 +67,30 @@ async def upload_image(
 
     upload_file_obj = file.file
 
-    if media_type == "image" and file.content_type.startswith("image/"):
+    if media_type == "image":
         try:
             image = Image.open(io.BytesIO(contents))
             
-            # Convert RGBA/P to RGB if needed to prevent WebP/JPEG artifacts, 
-            # though WebP supports transparency. We'll use RGBA if it has transparency, RGB otherwise.
+            # Default to RGBA if transparency exists, RGB otherwise
             if image.mode in ("RGBA", "P"):
                 image = image.convert("RGBA")
             else:
                 image = image.convert("RGB")
                 
             webp_buffer = io.BytesIO()
-            image.save(webp_buffer, format="WEBP", quality=85)
+            # Save with high quality WebP
+            image.save(webp_buffer, format="WEBP", quality=85, method=6)
             webp_buffer.seek(0)
             upload_file_obj = webp_buffer
-            file.filename = os.path.splitext(file.filename)[0] + ".webp"
-            print(f"DEBUG: Successfully converted {file.filename} to WebP locally.")
+            
+            # Update filename to .webp
+            base_name = os.path.splitext(file.filename)[0]
+            file.filename = f"{base_name}.webp"
+            print(f"DEBUG: Successfully converted {file.filename} to WebP.")
         except Exception as e:
             print(f"DEBUG: WebP conversion failed, falling back to original: {e}")
             file.file.seek(0)
             upload_file_obj = file.file
-    else:
-        file.file.seek(0)
-        upload_file_obj = file.file
 
     try:
         upload_params = {
@@ -101,11 +101,13 @@ async def upload_image(
         
         if media_type == "image":
             upload_params["format"] = "webp"
+            upload_params["fetch_format"] = "webp"
+            upload_params["quality"] = "auto"
             upload_params["transformation"] = [
-                {"width": 1200, "height": 630, "crop": "limit", "quality": "auto", "fetch_format": "webp"}
+                {"width": 1400, "crop": "limit"} # Ensure large images are reasonably sized
             ]
 
-        print(f"DEBUG: upload_params: {upload_params}")
+        print(f"DEBUG: Final Cloudinary upload_params: {upload_params}")
         result = cloudinary.uploader.upload(upload_file_obj, **upload_params)
         print(f"DEBUG: upload successful: {result.get('secure_url')}")
     except Exception as e:

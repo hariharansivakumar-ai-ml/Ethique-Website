@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowUpRight } from "react-icons/fi";
-import heroImg from "../../assets/heroimg.png";
+import heroImg from "../../assets/heroimg.webp";
 import "./HeroSection.css";
 
 const SLIDES = [
