@@ -3,20 +3,27 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiLock, FiUser, FiArrowRight } from 'react-icons/fi';
 import logoImg from '../../assets/Sri-Ponni-Medical-Centre-scaled.webp';
+import { blogService } from '../../services/blogService';
 
 const Login = () => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Mock authentication
-        if (credentials.username === 'admin' && credentials.password === 'ponni123') {
+        setError('');
+        setLoading(true);
+        try {
+            const data = await blogService.login(credentials.username, credentials.password);
+            localStorage.setItem('admin_token', data.access_token);
             localStorage.setItem('isAdminAuthenticated', 'true');
             navigate('/admin');
-        } else {
-            setError('Invalid username or password');
+        } catch (err) {
+            setError(err.message || 'Invalid username or password');
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -72,10 +79,11 @@ const Login = () => {
 
                     <button 
                         type="submit"
-                        className="w-full bg-primary text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-primary-dark transition-all shadow-xl shadow-primary/20 group"
+                        disabled={loading}
+                        className="w-full bg-primary text-white py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-primary-dark transition-all shadow-xl shadow-primary/20 group disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        Sign In Now
-                        <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+                        {loading ? 'Signing In...' : 'Sign In Now'}
+                        {!loading && <FiArrowRight className="group-hover:translate-x-1 transition-transform" />}
                     </button>
                     
                     <p className="text-center text-xs text-gray-400 pt-4">

@@ -6,19 +6,35 @@ import { motion } from "framer-motion";
 
 const AdminDashboard = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     loadBlogs();
   }, []);
 
-  const loadBlogs = () => {
-    setBlogs(blogService.getBlogs());
+  const loadBlogs = async () => {
+    setLoading(true);
+    setError("");
+    try {
+      const data = await blogService.adminGetBlogs();
+      // Filter out deleted blogs (backend does soft delete by setting is_deleted = True)
+      setBlogs(data.filter(blog => !blog.is_deleted));
+    } catch (err) {
+      setError(err.message || "Failed to load blogs");
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this post?")) {
-      blogService.deleteBlog(id);
-      loadBlogs();
+      try {
+        await blogService.adminDeleteBlog(id);
+        loadBlogs();
+      } catch (err) {
+        alert(err.message || "Failed to delete post");
+      }
     }
   };
 
@@ -60,7 +76,7 @@ const AdminDashboard = () => {
                 <td className="px-8 py-6">
                   <div className="flex items-center gap-4">
                     <img 
-                      src={blog.image} 
+                      src={blog.image_url || blog.image} 
                       alt="" 
                       className="w-12 h-12 rounded-lg object-cover"
                     />
@@ -83,7 +99,7 @@ const AdminDashboard = () => {
                   </span>
                 </td>
                 <td className="px-8 py-6 text-sm text-gray-500 font-medium">
-                  {blog.date}
+                  {blog.created_at ? new Date(blog.created_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : blog.date}
                 </td>
                 <td className="px-8 py-6">
                   <div className="flex justify-end gap-2">

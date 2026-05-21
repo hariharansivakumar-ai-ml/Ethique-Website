@@ -4,7 +4,7 @@ import { FiLayout, FiEdit3, FiLogOut, FiHome } from 'react-icons/fi';
 const AdminLayout = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const isAuthenticated = localStorage.getItem('isAdminAuthenticated') === 'true';
+    const isAuthenticated = !!localStorage.getItem('admin_token');
 
     // Redirect to login if not authenticated
     if (!isAuthenticated) {
@@ -13,6 +13,7 @@ const AdminLayout = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('isAdminAuthenticated');
+        localStorage.removeItem('admin_token');
         navigate('/');
     };
 
