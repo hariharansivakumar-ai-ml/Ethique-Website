@@ -8,12 +8,12 @@
     {
       "id": 2,
       "question": "How can I book an appointment?",
-      "answer": "You can book an appointment by clicking the **'MAKE AN APPOINTMENT'** button at the top of our website, or by calling us directly at **(+91) 78691 51300**."
+      "answer": "You can book an appointment by clicking the **'MAKE AN APPOINTMENT'** button at the top of our website, or by calling us directly at **xxxxxxxxxx**."
     },
     {
       "id": 3,
-      "question": "Where is Sri Ponni Medical Centre located?",
-      "answer": "We are located in **Velur, Namakkal**. You can find our exact location on the **'Contact Us'** page, which includes an interactive map for directions."
+      "question": "Where is Ethique Hospitals located?",
+      "answer": "We are located at **xxxxxxxxxx**. You can find our exact location on the **'Contact Us'** page, which includes an interactive map for directions."
     },
     {
       "id": 4,
@@ -23,7 +23,7 @@
     {
       "id": 5,
       "question": "Is there 24/7 emergency support?",
-      "answer": "Yes, Sri Ponni Medical Centre provides **24/7 emergency care** and ambulance support. Your health and safety are our top priorities at all times."
+      "answer": "Yes, Ethique Hospitals provides **24/7 emergency care** and ambulance support. Your health and safety are our top priorities at all times."
     }
   ]
 }

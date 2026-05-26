@@ -58,7 +58,7 @@ const Header = () => {
             <div className="header-icon-circle group-hover:scale-110 h-10 w-10">
               <FiPhone className="text-sm" />
             </div>
-            <span className="text-base whitespace-nowrap group-hover:text-primary transition-colors tracking-tight">(+91) 78691 51300</span>
+            <span className="text-base whitespace-nowrap group-hover:text-primary transition-colors tracking-tight">xxxxxxxxxx</span>
           </div>
 
           <Link to="/contact" className="btn-appointment hidden lg:flex group">
@@ -143,11 +143,11 @@ const Header = () => {
                   <div className="space-y-4">
                     <div className="flex items-center gap-4 text-dark font-medium">
                       <div className="p-2 bg-gray-50 rounded-lg"><FiPhone size={18} className="text-[#376e80]" /></div>
-                      <span>+91 78691 51300</span>
+                      <span>xxxxxxxxxx</span>
                     </div>
                     <div className="flex items-center gap-4 text-dark font-medium">
                       <div className="p-2 bg-gray-50 rounded-lg"><FiMail size={18} className="text-[#376e80]" /></div>
-                      <span>sriponnimedicalcentre@gmail.com</span>
+                      <span>xxxxxxxxxx</span>
                     </div>
                   </div>
                 </div>

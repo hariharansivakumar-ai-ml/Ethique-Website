@@ -73,14 +73,14 @@ export default function Navbar() {
         <div className="topbar__container">
           {/* Left — contact info */}
           <div className="topbar__left">
-            <a href="mailto:sriponnimedicalcentre@gmail.com" className="topbar__item">
+            <a href="mailto:xxxxxxxxxx" className="topbar__item">
               <FiMail className="topbar__icon" />
-              sriponnimedicalcentre@gmail.com
+              xxxxxxxxxx
             </a>
             <span className="topbar__divider" />
             <span className="topbar__item">
               <FiMapPin className="topbar__icon" />
-              Trichy, Tamil Nadu, India
+              xxxxxxxxxx
             </span>
           </div>
 

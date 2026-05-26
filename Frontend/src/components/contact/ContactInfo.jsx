@@ -8,19 +8,19 @@ const contactDetails = [
     {
         icon: <FiPhone />,
         title: "Phone:",
-        content: "78691 51300, 93453 31564, 98409 14694",
+        content: "xxxxxxxxxx",
         delay: 0.1
     },
     {
         icon: <FiMail />,
         title: "Email Address:",
-        content: "sriponnimedicalcentre@gmail.com",
+        content: "xxxxxxxxxx",
         delay: 0.2
     },
     {
         icon: <FiMapPin />,
         title: "Our Address:",
-        content: "Namakkal Road, Velur, Tamilnadu – 638182",
+        content: "xxxxxxxxxx",
         delay: 0.3
     }
 ];

@@ -66,23 +66,21 @@ const Footer = () => {
                 <FaPhoneAlt className="footer-contact-icon" />
                 <div className="footer-contact-text">
                   <span className="highlight">Phone Number</span>
-                  <p>(+91) 78691 51300</p>
-                  <p>93453 31564</p>
-                  <p>98409 14694</p>
+                  <p>xxxxxxxxxx</p>
                 </div>
               </div>
               <div className="footer-contact-item">
                 <FaEnvelope className="footer-contact-icon" />
                 <div className="footer-contact-text">
                   <span className="highlight">Email Address</span>
-                  <p>info@ethiquehospitals.com</p>
+                  <p>xxxxxxxxxx</p>
                 </div>
               </div>
               <div className="footer-contact-item">
                 <FaMapMarkerAlt className="footer-contact-icon" />
                 <div className="footer-contact-text">
                   <span className="highlight">Location</span>
-                  <p>Namakkal Road, Velur, Tamilnadu – 638182</p>
+                  <p>xxxxxxxxxx</p>
                 </div>
               </div>
             </div>

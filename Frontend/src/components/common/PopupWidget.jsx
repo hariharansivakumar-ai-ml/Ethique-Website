@@ -187,7 +187,7 @@ const PopupWidget = () => {
                                                 <FiCheckCircle size={40} />
                                             </div>
                                             <h3 className="text-3xl font-bold text-gray-900 mb-4">Subscription Active!</h3>
-                                            <p className="text-gray-500">Thank you for joining the Sri Ponni community.</p>
+                                            <p className="text-gray-500">Thank you for joining the Ethique Hospitals community.</p>
                                         </motion.div>
                                     ) : (
                                         <>
