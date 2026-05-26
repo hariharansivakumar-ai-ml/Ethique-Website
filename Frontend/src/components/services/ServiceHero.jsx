@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import heroBg from '../../assets/indian_services_hero_consultation.webp';
 import './ServiceHero.css';
 
-const ServiceHero = ({ title, subtitle }) => {
+const ServiceHero = ({ title, subtitle, description, bottomText }) => {
   return (
     <section className="relative min-h-[50vh] md:min-h-[78vh] flex items-center px-4 sm:px-8 mb-6 overflow-hidden">
 
@@ -57,15 +57,32 @@ const ServiceHero = ({ title, subtitle }) => {
             </motion.p>
           )}
 
+          {/* Description */}
+          {description && (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
+              className="text-white/80 text-sm md:text-base max-w-2xl leading-relaxed"
+            >
+              {description}
+            </motion.p>
+          )}
+
+          {/* Bottom Text / CTA */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.7 }}
             className="text-white/70 text-sm md:text-md italic max-w-2xl"
           >
-            We offer a wide range of treatments. To know more about our hospital, visit 
-            <Link to="/about" className="text-white hover:underline font-bold ml-1">About Us</Link> or 
-            <Link to="/contact" className="text-white hover:underline font-bold ml-1">Contact Us</Link> for consultation.
+            {bottomText || (
+              <>
+                We offer a wide range of treatments. To know more about our hospital, visit 
+                <Link to="/about" className="text-white hover:underline font-bold ml-1">About Us</Link> or 
+                <Link to="/contact" className="text-white hover:underline font-bold ml-1">Contact Us</Link> for consultation.
+              </>
+            )}
           </motion.p>
         </div>
       </div>

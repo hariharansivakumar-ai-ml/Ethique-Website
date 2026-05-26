@@ -6,23 +6,23 @@ import "./FaqSection.css";
 const faqs = [
   {
     question: "What medical specialties are available at Ethique Hospitals?",
-    answer: "We offer a wide range of specialties including Cardiology, Neurology, Nephrology, Gastroenterology, Orthopaedics, and General Surgery, led by a team of expert specialist doctors."
+    answer: "We offer a wide range of specialized departments including Cardiology, Neurology, Orthopaedics, Oncology, Gastroenterology, Nephrology, and General Surgery, all led by highly experienced clinical experts."
   },
   {
-    question: "How can I schedule an appointment with a doctor?",
-    answer: "You can book an appointment easily by clicking the 'Book Appointment' button on our website, or by contacting our hospital directly for immediate assistance."
+    question: "How can I schedule a consultation with a specialist?",
+    answer: "You can easily schedule a consultation by clicking the 'Book Appointment' button on our website, calling our patient helpdesk, or visiting Ethique Hospitals directly."
   },
   {
-    question: "Does Ethique Hospitals provide emergency medical services?",
-    answer: "Yes, Ethique Hospitals is equipped with a dedicated emergency department and experienced emergency physicians to provide 24/7 immediate medical attention and safe patient-focused care."
+    question: "Does Ethique Hospitals provide emergency care services?",
+    answer: "Yes, we provide 24/7 comprehensive emergency and trauma care equipped with state-of-the-art life support systems and a dedicated rapid-response medical team."
   },
   {
-    question: "Are advanced diagnostic and laboratory services available?",
-    answer: "Our hospital features modern diagnostic services and a fully equipped laboratory, managed by experienced radiologists and technicians to provide accurate and reliable results for better treatment planning."
+    question: "Are diagnostic and imaging services available?",
+    answer: "Yes, Ethique Hospitals offers advanced diagnostic imaging services including MRI, CT scans, ultrasound, digital X-rays, and a fully automated pathology laboratory."
   },
   {
-    question: "Do you offer personalized treatment and health consultations?",
-    answer: "Yes, we focus on personalized treatment plans designed around each patient’s comfort, safety, and recovery, along with comprehensive medical consultations."
+    question: "Do you offer personalized treatment plans for patients?",
+    answer: "Absolutely. Our multidisciplinary team of doctors designs customized treatment plans tailored to each patient's unique medical history, comfort, and long-term recovery goals."
   }
 ];
 

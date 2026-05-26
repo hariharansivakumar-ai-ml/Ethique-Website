@@ -12,122 +12,122 @@ import './ServiceGrid.css';
 const servicesContent = [
     {
         title: "Anesthesiology",
-        description: "Our Anesthesiology department delivers safe, precise, and compassionate care for patients undergoing surgeries, procedures, and critical treatments. With advanced monitoring and modern techniques, our specialists ensure comfort, pain control, and a smooth recovery at every stage.",
+        description: "Our anesthesiology specialists provide safe and effective pain management, advanced surgical support, and continuous patient monitoring to ensure comfort and safety before, during, and after medical procedures.",
         icon: <FiActivity />
     },
     {
         title: "Cardiology",
-        description: "Cardiology focuses on the diagnosis and treatment of heart problems, from routine check-ups to advanced care. Using modern tests and proven treatments, the team works to improve heart health, manage risks, and support patients through every stage of recovery.",
+        description: "Comprehensive heart care services focused on early diagnosis, preventive cardiology, advanced treatment, and long-term cardiovascular wellness for patients of all ages.",
         icon: <FiHeart />
     },
     {
         title: "Dentistry",
-        description: "Provides complete dental care including check-ups, cleaning, fillings, extractions, root canal treatments, and cosmetic procedures. Uses modern equipment and gentle techniques to ensure healthy teeth, a confident smile, and patient comfort at every visit.",
+        description: "Complete dental healthcare services including preventive care, cosmetic dentistry, restorative treatments, and oral health solutions using modern dental technology.",
         icon: <FiSmile />
     },
     {
         title: "Dermatology",
-        description: "Treats a wide range of skin, hair, and nail concerns with advanced care and modern techniques. From acne treatments and allergy control to cosmetic enhancements and laser therapies, the focus is on restoring health, improving appearance, and ensuring long-term skin wellness.",
+        description: "Advanced skin, hair, and nail treatments designed to improve skin health, manage chronic conditions, and provide aesthetic care with personalized treatment plans.",
         icon: <FiSun />
     },
     {
         title: "Emergency Care",
-        description: "24/7 medical support for accidents, injuries, and sudden health problems. With quick response, advanced equipment, and experienced doctors, emergencies are handled with speed, safety, and expert care to stabilize patients, prevent complications, and protect lives.",
+        description: "24/7 emergency medical support with rapid response teams, advanced critical care facilities, and immediate treatment for urgent medical conditions and trauma cases.",
         icon: <FiAlertCircle />
     },
     {
         title: "ENT",
-        description: "Specialized care for ear, nose, and throat problems including infections, hearing issues, allergies, sinus conditions, and voice disorders. With advanced diagnostic tools and skilled specialists, treatment focuses on quick relief, lasting recovery, and improved quality of life.",
+        description: "Expert care for ear, nose, and throat conditions including allergies, infections, hearing disorders, sinus problems, and voice-related concerns.",
         icon: <FiUser />
     },
     {
         title: "Endocrinology",
-        description: "Caring for patients with hormone and metabolism concerns, including diabetes, thyroid problems, and hormonal imbalances. With accurate diagnosis, modern treatments, and ongoing guidance, the service helps maintain health, manage symptoms, and improve overall well-being.",
+        description: "Specialized treatment for hormonal and metabolic disorders including diabetes, thyroid conditions, and endocrine health management through advanced care solutions.",
         icon: <FiTarget />
     },
     {
         title: "General Medicine",
-        description: "Caring for everyday health needs, from minor illnesses to chronic conditions. With timely check-ups, accurate diagnosis, and effective treatment, patients receive the right support to recover quickly, maintain good health, and prevent future problems.",
+        description: "Comprehensive healthcare services focused on preventive care, chronic disease management, accurate diagnosis, and overall patient wellness.",
         icon: <FiPlus />
     },
     {
         title: "General Surgery",
-        description: "Caring for patients who need surgical treatment, from small procedures to major operations. With skilled hands, advanced techniques, and attentive aftercare, every step is taken to ensure safety, comfort, and a smooth recovery.",
+        description: "Advanced surgical procedures performed with precision, safety, and modern minimally invasive techniques to support faster recovery and improved outcomes.",
         icon: <FiScissors />
     },
     {
         title: "Gastroenterology",
-        description: "Expert care for digestive health, treating issues of the stomach, liver, intestines, and more. With advanced tests, gentle procedures, and personalized treatment, the goal is to ease discomfort, restore balance, and help patients enjoy better everyday well-being.",
+        description: "Specialized digestive healthcare services for stomach, liver, intestinal, and gastrointestinal conditions using advanced diagnostics and treatment methods.",
         icon: <FiRefreshCw />
     },
     {
         title: "Nephrology",
-        description: "Focused care for kidney health, managing conditions such as kidney stones, infections, and chronic kidney disease. With accurate diagnosis, advanced treatments, and ongoing guidance, the aim is to protect kidney function, improve health, and enhance quality of life.",
+        description: "Expert kidney care services for managing kidney disorders, chronic kidney disease, infections, and renal health with personalized treatment approaches.",
         icon: <FiDroplet />
     },
     {
         title: "Neurology",
-        description: "Care for brain, spine, and nerve-related problems such as headaches, stroke, seizures, and movement disorders. With modern scans, expert guidance, and tailored treatment, the goal is to relieve symptoms, improve daily function, and support long-term health.",
+        description: "Comprehensive neurological care for conditions affecting the brain, spine, and nervous system supported by advanced diagnostic technology and expert specialists.",
         icon: <FiZap />
     },
     {
         title: "Oncology",
-        description: "Delivers advanced cancer care with a focus on early diagnosis, effective treatment, and continuous support. Combines modern therapies, advanced technology, and expert guidance to achieve the best possible outcomes and support patients through every stage of care.",
+        description: "Compassionate cancer care focused on early detection, advanced treatment therapies, recovery support, and personalized patient-centered oncology services.",
         icon: <FiShield />
     },
     {
-        title: "Opthalmology",
-        description: "Complete eye care service covering vision checks, treatment for eye diseases, and corrective surgeries. With advanced diagnostic tools, laser technology, and skilled specialists, the focus is on protecting sight, treating conditions early, and ensuring long-term eye health for all ages.",
+        title: "Ophthalmology",
+        description: "Complete eye care services including vision correction, eye disease treatment, preventive screenings, and advanced surgical procedures for long-term eye health.",
         icon: <FiEye />
     },
     {
         title: "Orthopaedics",
-        description: "Specialized in treating injuries and conditions affecting bones, joints, and muscles. Whether it’s a fracture, joint pain, or a sports injury, care is given using advanced diagnostics, modern therapies, and surgical expertise to help patients regain strength and move comfortably.",
+        description: "Specialized treatment for bone, joint, muscle, and spine conditions with modern therapies, rehabilitation programs, and advanced orthopedic procedures.",
         icon: <FiCodepen />
     },
     {
         title: "Obstetrics & Gynaecology",
-        description: "Maternity care, safe delivery, infertility treatment, menstrual disorder management, and advanced gynaecological surgeries. Provides complete women’s health services with expert care, personalised treatment, and modern facilities to ensure safety, comfort, and well-being at every stage of life.",
+        description: "Comprehensive women’s healthcare services including maternity care, pregnancy support, fertility treatment, gynecological consultations, and preventive wellness care.",
         icon: <FiUserPlus />
     },
     {
         title: "Palliative Care",
-        description: "Pain relief, symptom control, emotional support, and comfort care for patients with serious or life-limiting illnesses. Focus on dignity, personalised attention, and better quality of life through medical management, counselling, and advanced care.",
+        description: "Supportive and compassionate medical care focused on pain relief, symptom management, emotional support, and improving quality of life for patients.",
         icon: <FiLifeBuoy />
     },
     {
         title: "Pediatrics",
-        description: "Care for babies, children, and teens to keep them healthy and growing strong. Services include regular check-ups, vaccinations, illness treatment, and growth tracking. With gentle care, early diagnosis, and a focus on overall well-being, children are supported at every stage of development.",
+        description: "Dedicated healthcare services for infants, children, and adolescents focused on healthy growth, preventive care, vaccinations, and child wellness.",
         icon: <FiSmile />
     },
     {
         title: "Psychiatry",
-        description: "Helping individuals manage and overcome mental health challenges with care and understanding. Services include evaluation, counselling, therapy sessions, and treatment for issues like anxiety, depression, stress, and mood disorders, aiming for better mental strength and stability.",
+        description: "Professional mental healthcare services providing counseling, emotional support, therapy, and treatment for stress, anxiety, depression, and behavioral conditions.",
         icon: <FiCpu />
     },
     {
         title: "Physiotherapy",
-        description: "A physiotherapist provides care for injury rehabilitation, joint and muscle pain relief, mobility improvement, posture correction, and strengthening programs. Using exercises, hands-on therapy, and modern rehab techniques, patients regain movement and return to daily activities.",
+        description: "Rehabilitation and physical therapy programs designed to restore mobility, reduce pain, improve strength, and support recovery after injuries or surgeries.",
         icon: <FiMove />
     },
     {
         title: "Pulmonology",
-        description: "Treatment for lung and breathing problems, including asthma, bronchitis, COPD, and respiratory infections. Pulmonology focuses on improving breathing, managing symptoms, and supporting overall lung health with advanced care and therapies.",
+        description: "Advanced respiratory care services for asthma, lung infections, breathing disorders, and chronic pulmonary conditions with modern treatment solutions.",
         icon: <FiWind />
     },
     {
         title: "Radiology & Imaging",
-        description: "Advanced imaging services including X-rays, CT scans, MRI, and ultrasound for accurate diagnosis and treatment planning. Expert radiologists use modern technology to detect conditions early, monitor progress, and guide effective medical care for patients.",
+        description: "High-quality diagnostic imaging services including MRI, CT scans, ultrasound, digital X-rays, and advanced radiology support for accurate medical evaluation.",
         icon: <FiCamera />
     },
     {
         title: "Rheumatology",
-        description: "Helps with joint, muscle, and bone problems, including arthritis, autoimmune issues, and long-term pain. Rheumatologists guide exercises, medications, and therapies to ease discomfort, improve movement, and keep patients active and healthy.",
+        description: "Specialized care for arthritis, autoimmune disorders, joint pain, and musculoskeletal conditions focused on improving mobility and quality of life.",
         icon: <FiLayers />
     },
     {
         title: "Urology",
-        description: "Kidney stone removal, urinary infection care, prostate and bladder management, and men’s reproductive health. Includes advanced tests, minimally invasive procedures, and support to restore normal function and relieve discomfort effectively.",
+        description: "Expert urological care for kidney stones, urinary tract conditions, prostate disorders, bladder health, and male reproductive wellness.",
         icon: <FiFilter />
     }
 ];
@@ -138,10 +138,9 @@ const ServiceGrid = () => {
             <div className="container mx-auto px-4 lg:px-20">
                 <div className="text-center mb-16 space-y-4">
                     <span className="text-[#376e80] font-bold uppercase tracking-widest text-sm">Main Specialties</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#103354]">Our Medical Services</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-[#103354]">Specialized Medical Services</h2>
                     <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
-                        We provide comprehensive medical care with a focus on empathy, 
-                        integrity, and excellence across all our specialized departments.
+                        Comprehensive healthcare solutions tailored to deliver safe, advanced, and compassionate medical care.
                     </p>
                 </div>
 
