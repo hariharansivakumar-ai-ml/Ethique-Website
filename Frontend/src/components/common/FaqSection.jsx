@@ -5,29 +5,30 @@ import "./FaqSection.css";
 
 const faqs = [
   {
-    question: "What specialty medical services are available at Sri Ponni Medical Centre?",
-    answer: "We offer a wide range of specialties including Cardiology, Neurology, Nephrology, Gastroenterology, Orthopaedics, and General Surgery, led by a team of expert specialist doctors in Coimbatore."
+    question: "What medical specialties are available at Ethique Hospitals?",
+    answer: "We offer a wide range of specialties including Cardiology, Neurology, Nephrology, Gastroenterology, Orthopaedics, and General Surgery, led by a team of expert specialist doctors."
   },
   {
-    question: "How can I book an appointment with a specialist doctor?",
-    answer: "You can book an appointment easily by clicking the 'Book An Appointment' button on our website, or by calling our center directly at +91 (422) 255-5511 for immediate assistance."
+    question: "How can I schedule an appointment with a doctor?",
+    answer: "You can book an appointment easily by clicking the 'Book Appointment' button on our website, or by contacting our hospital directly for immediate assistance."
   },
   {
-    question: "Is Sri Ponni Medical Centre an affordable hospital in Coimbatore?",
-    answer: "Yes, our primary goal is to provide high-quality, modern medical care at affordable rates, ensuring that excellence in healthcare is accessible to everyone in the local community."
+    question: "Does Ethique Hospitals provide emergency medical services?",
+    answer: "Yes, Ethique Hospitals is equipped with a dedicated emergency department and experienced emergency physicians to provide 24/7 immediate medical attention and safe patient-focused care."
   },
   {
-    question: "Does the hospital provide emergency medical care?",
-    answer: "Absolutely. Sri Ponni Medical Centre is equipped with a dedicated emergency department and experienced emergency physicians to provide 24/7 immediate medical attention and safe patient-focused care."
-  },
-  {
-    question: "What diagnostic and laboratory facilities do you have?",
+    question: "Are advanced diagnostic and laboratory services available?",
     answer: "Our hospital features modern diagnostic services and a fully equipped laboratory, managed by experienced radiologists and technicians to provide accurate and reliable results for better treatment planning."
+  },
+  {
+    question: "Do you offer personalized treatment and health consultations?",
+    answer: "Yes, we focus on personalized treatment plans designed around each patient’s comfort, safety, and recovery, along with comprehensive medical consultations."
   }
 ];
 
-const FaqSection = () => {
+const FaqSection = ({ faqs: customFaqs }) => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const activeFaqs = customFaqs || faqs;
 
   const toggleFaq = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -58,7 +59,7 @@ const FaqSection = () => {
         </div>
 
         <div className="faq-container">
-          {faqs.map((faq, index) => (
+          {activeFaqs.map((faq, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 30, scale: 0.95 }}

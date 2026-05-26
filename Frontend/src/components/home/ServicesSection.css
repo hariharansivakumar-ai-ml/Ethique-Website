@@ -30,7 +30,7 @@
 .services-main-title {
   font-size: 36px;
   font-weight: 700;
-  color: #0e548a;
+  color: #103354;
   line-height: 1.2;
 }
 
@@ -49,14 +49,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0e548a;
+  color: #103354;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .slider-nav-btn:hover {
-  background-color: #0e548a;
+  background-color: #103354;
   color: white;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(14, 84, 138, 0.2);
@@ -88,7 +88,7 @@
 
 .service-card:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  border-color: #0e548a33;
+  border-color: #10335433;
 }
 
 .service-img-container {
@@ -114,7 +114,7 @@
   left: 30px;
   width: 60px;
   height: 60px;
-  background-color: #0e548a;
+  background-color: #103354;
   color: white;
   border-radius: 12px;
   display: flex;
@@ -139,7 +139,7 @@
 .service-title {
   font-size: 24px;
   font-weight: 700;
-  color: #0e548a;
+  color: #103354;
   margin-bottom: 15px;
 }
 

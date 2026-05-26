@@ -9,37 +9,37 @@ import heroImg3 from "../assets/Heroimg3.webp";
 const slides = [
   {
     image: heroImg1,
-    badge: "WE SUPPORT BETTER HEALTHCARE",
+    badge: "DEDICATED CARE TEAM",
     title: (
       <>
-        Exceptional care <br />
-        every patient
+        Expert Doctors <br />
+        Committed To Your Health
       </>
     ),
-    subtitle: "Care you can believe in, Compassionate Care, Advanced Medicine",
+    subtitle: "Our experienced medical specialists provide advanced treatment with compassion, precision, and personalized patient care.",
     objectPosition: "center center",
   },
   {
     image: heroImg2,
-    badge: "MODERN TECHNOLOGY",
-    title: (
-      <>
-        Transform Your <br />
-        Health Journey
-      </>
-    ),
-    subtitle: "Advanced diagnostics and personalized treatment plans for your wellbeing.",
-  },
-  {
-    image: heroImg3,
-    badge: "DEDICATED TEAM",
+    badge: "DEDICATED CARE TEAM",
     title: (
       <>
         Expert Doctors <br />
-        At Your Service
+        Committed To Your Health
       </>
     ),
-    subtitle: "Our specialists are here to provide world-class medical expertise.",
+    subtitle: "Our experienced medical specialists provide advanced treatment with compassion, precision, and personalized patient care.",
+  },
+  {
+    image: heroImg3,
+    badge: "DEDICATED CARE TEAM",
+    title: (
+      <>
+        Expert Doctors <br />
+        Committed To Your Health
+      </>
+    ),
+    subtitle: "Our experienced medical specialists provide advanced treatment with compassion, precision, and personalized patient care.",
   },
 ];
 
@@ -138,7 +138,7 @@ const Hero = () => {
                 to="/contact"
                 className="px-8 py-3.5 bg-primary text-white font-semibold rounded-full hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center gap-3 shadow-xl shadow-blue-600/30 text-base uppercase tracking-wider group"
               >
-                Contact Us
+                Book Appointment
                 <FiArrowUpRight className="text-xl group-hover:rotate-45 transition-all" />
               </Link>
             </motion.div>

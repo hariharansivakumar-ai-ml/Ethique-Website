@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPhone, FiArrowUpRight, FiMenu, FiX, FiMail } from "react-icons/fi";
-import logoImg from "../assets/Sri-Ponni-Medical-Centre-scaled.webp";
+import logoImg from "../assets/Ethique Hospital Logo.jpeg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -33,7 +33,7 @@ const Header = () => {
         <Link to="/" className="flex items-center py-2">
           <img 
             src={logoImg} 
-            alt="Sri Ponni Medical Centre" 
+            alt="Ethique Hospital" 
             className={`transition-all duration-300 ${isScrolled ? 'h-12' : 'h-14'} w-auto object-contain`} 
           />
         </Link>
@@ -126,12 +126,12 @@ const Header = () => {
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <div className="flex flex-col">
-                          <span className={`${location.pathname === link.path ? 'text-[#13a078]' : 'text-[#0f172a]'} text-base font-bold transition-colors`}>
+                          <span className={`${location.pathname === link.path ? 'text-[#376e80]' : 'text-[#0f172a]'} text-base font-bold transition-colors`}>
                             {link.name}
                           </span>
-                          <div className={`h-1 transition-all duration-300 rounded-full ${location.pathname === link.path ? 'w-full bg-[#13a078]' : 'w-0 bg-primary group-hover:w-full'}`} />
+                          <div className={`h-1 transition-all duration-300 rounded-full ${location.pathname === link.path ? 'w-full bg-[#376e80]' : 'w-0 bg-primary group-hover:w-full'}`} />
                         </div>
-                        <FiArrowUpRight className={`${location.pathname === link.path ? 'text-[#13a078]' : 'text-gray-300'} group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all`} size={24} />
+                        <FiArrowUpRight className={`${location.pathname === link.path ? 'text-[#376e80]' : 'text-gray-300'} group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all`} size={24} />
                       </Link>
                     </motion.div>
                   ))}
@@ -142,11 +142,11 @@ const Header = () => {
                   <p className="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-6">Contact Us</p>
                   <div className="space-y-4">
                     <div className="flex items-center gap-4 text-dark font-medium">
-                      <div className="p-2 bg-gray-50 rounded-lg"><FiPhone size={18} className="text-[#13a078]" /></div>
+                      <div className="p-2 bg-gray-50 rounded-lg"><FiPhone size={18} className="text-[#376e80]" /></div>
                       <span>+91 78691 51300</span>
                     </div>
                     <div className="flex items-center gap-4 text-dark font-medium">
-                      <div className="p-2 bg-gray-50 rounded-lg"><FiMail size={18} className="text-[#13a078]" /></div>
+                      <div className="p-2 bg-gray-50 rounded-lg"><FiMail size={18} className="text-[#376e80]" /></div>
                       <span>sriponnimedicalcentre@gmail.com</span>
                     </div>
                   </div>

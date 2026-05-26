@@ -64,10 +64,10 @@ const ContactInfo = () => {
                             whileHover={{ y: -10, transition: { duration: 0.3 } }}
                             className="contact-info-card bg-[#f0f9f9] p-10 rounded-[32px] text-center transition-all duration-300 hover:shadow-xl group"
                         >
-                            <div className="contact-info-icon w-16 h-16 bg-white text-[#13a078] rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 shadow-sm group-hover:bg-[#13a078] group-hover:text-white transition-all duration-300 transform group-hover:scale-110">
+                            <div className="contact-info-icon w-16 h-16 bg-white text-[#376e80] rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6 shadow-sm group-hover:bg-[#376e80] group-hover:text-white transition-all duration-300 transform group-hover:scale-110">
                                 {item.icon}
                             </div>
-                            <h3 className="text-xl font-bold text-[#0e3d64] mb-2">{item.title}</h3>
+                            <h3 className="text-xl font-bold text-[#103354] mb-2">{item.title}</h3>
                             <p className="text-gray-500 font-medium">{item.content}</p>
                         </motion.div>
                     ))}

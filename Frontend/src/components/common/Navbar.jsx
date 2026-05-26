@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FiSearch, FiMenu, FiX, FiChevronDown, FiMail, FiMapPin } from "react-icons/fi";
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 import { MdOutlineDoubleArrow } from "react-icons/md";
-import logo from "../../assets/Sri-Ponni-Medical-Centre-scaled.webp";
+import logo from "../../assets/Ethique Hospital Logo.jpeg";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -108,7 +108,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="navbar__logo">
-            <img src={logo} alt="Sri Ponni Medical Centre" className="navbar__logo-img" />
+            <img src={logo} alt="Ethique Hospital" className="navbar__logo-img" />
           </Link>
 
           {/* Center Nav */}

@@ -3,7 +3,7 @@
    ============================================= */
 
 .topbar {
-  background: #0d1f3c;
+  background: #082c4e;
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.8rem;
 }
@@ -321,12 +321,12 @@
   transition: all 0.22s ease;
   white-space: nowrap;
   letter-spacing: 0.01em;
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 16px rgba(16, 51, 84, 0.3);
 }
 .navbar__cta:hover {
   background: var(--primary-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 6px 20px rgba(16, 51, 84, 0.4);
 }
 .navbar__cta:active { transform: translateY(0); }
 

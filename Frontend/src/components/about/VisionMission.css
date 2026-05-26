@@ -24,7 +24,7 @@
   width: 90px;
   height: 90px;
   background: rgba(14, 84, 138, 0.05);
-  color: #0e548a;
+  color: #103354;
   border-radius: 25px;
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@
 }
 
 .vm-card:hover .vm-icon-wrapper {
-  background: #0e548a;
+  background: #103354;
   color: white;
   transform: rotateY(180deg);
 }
@@ -42,7 +42,7 @@
 .vm-title {
   font-size: 32px;
   font-weight: 800;
-  color: #0e3d64;
+  color: #103354;
   margin-bottom: 20px;
 }
 

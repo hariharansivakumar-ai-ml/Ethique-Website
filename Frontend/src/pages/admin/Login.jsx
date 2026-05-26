@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiLock, FiUser, FiArrowRight } from 'react-icons/fi';
-import logoImg from '../../assets/Sri-Ponni-Medical-Centre-scaled.webp';
+import logoImg from '../../assets/Ethique Hospital Logo.jpeg';
 import { blogService } from '../../services/blogService';
 
 const Login = () => {
@@ -35,8 +35,8 @@ const Login = () => {
                 className="w-full max-w-md"
             >
                 <div className="text-center mb-10">
-                    <img src={logoImg} alt="Sri Ponni" className="h-20 mx-auto mb-6" />
-                    <h1 className="text-3xl font-bold text-[#0e3d64]">Admin Portal</h1>
+                    <img src={logoImg} alt="Ethique Hospital" className="h-20 mx-auto mb-6" />
+                    <h1 className="text-3xl font-bold text-[#103354]">Admin Portal</h1>
                     <p className="text-gray-500 mt-2">Sign in to manage your medical blog</p>
                 </div>
 

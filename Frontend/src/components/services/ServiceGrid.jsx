@@ -137,8 +137,8 @@ const ServiceGrid = () => {
         <section className="service-grid-section py-24 bg-gray-50">
             <div className="container mx-auto px-4 lg:px-20">
                 <div className="text-center mb-16 space-y-4">
-                    <span className="text-[#13a078] font-bold uppercase tracking-widest text-sm">Main Specialties</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#0e3d64]">Our Medical Services</h2>
+                    <span className="text-[#376e80] font-bold uppercase tracking-widest text-sm">Main Specialties</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-[#103354]">Our Medical Services</h2>
                     <p className="text-gray-500 max-w-2xl mx-auto text-lg leading-relaxed">
                         We provide comprehensive medical care with a focus on empathy, 
                         integrity, and excellence across all our specialized departments.
@@ -170,10 +170,10 @@ const ServiceGrid = () => {
                             whileHover={{ y: -10, transition: { duration: 0.3 } }}
                             className="service-card group bg-white p-10 rounded-[32px] shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col h-full"
                         >
-                            <div className="service-icon-box w-20 h-20 bg-[#ebf7f4] text-[#13a078] rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:bg-[#13a078] group-hover:text-white transition-all duration-500 transform group-hover:rotate-6">
+                            <div className="service-icon-box w-20 h-20 bg-[#eef5f7] text-[#376e80] rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:bg-[#376e80] group-hover:text-white transition-all duration-500 transform group-hover:rotate-6">
                                 {service.icon}
                             </div>
-                            <h3 className="text-2xl font-bold text-[#0e3d64] mb-4 group-hover:text-primary transition-colors">
+                            <h3 className="text-2xl font-bold text-[#103354] mb-4 group-hover:text-primary transition-colors">
                                 {service.title}
                             </h3>
                             <p className="text-gray-500 leading-relaxed text-[15px] flex-grow">

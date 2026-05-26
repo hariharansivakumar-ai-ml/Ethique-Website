@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaYoutube } from "react-icons/fa";
-import logoImg from "../../assets/Sri-Ponni-Medical-Centre-scaled.webp";
+import logoImg from "../../assets/Ethique Hospital Logo.jpeg";
 import "./Footer.css";
 
 const Footer = () => {
@@ -10,7 +10,10 @@ const Footer = () => {
         
         {/* Appointment CTA Overlap */}
         <div className="newsletter-box flex flex-col items-center justify-center text-center">
-          <h3 className="newsletter-title">Get Expert Medical Care from Sri Ponni Medical Centre</h3>
+          <h3 className="newsletter-title">Get Trusted Medical Care <br /> At Ethique Hospitals</h3>
+          <p className="text-white/80 text-sm max-w-2xl mt-2 leading-relaxed">
+            Ethique Hospitals is committed to delivering safe, compassionate, and advanced healthcare services with a strong focus on patient comfort and medical excellence.
+          </p>
         </div>
 
         <div className="footer-main">
@@ -19,16 +22,16 @@ const Footer = () => {
             {/* Col 1: About */}
             <div className="footer-about">
               <Link to="/">
-                <img src={logoImg} alt="Sri Ponni" className="h-24 w-auto object-contain brightness-0 invert" />
+                <img src={logoImg} alt="Ethique Hospital" className="h-24 w-auto object-contain brightness-0 invert" />
               </Link>
               <p className="footer-description">
-                Sri Ponni Medical Center in Coimbatore provides affordable, high-quality medical care in a safe and patient-focused environment. We prioritize comfort and hygiene.
+                Ethique Hospitals provides trusted healthcare services through experienced doctors, advanced technology, and compassionate patient care in a safe and modern medical environment.
               </p>
               <div className="footer-socials">
-                <a href="https://www.facebook.com/sriponnimedicalcentre" target="_blank" rel="noopener noreferrer" className="social-icon"><FaFacebookF /></a>
-                <a href="https://www.instagram.com/sriponnimedicalcentre/" target="_blank" rel="noopener noreferrer" className="social-icon"><FaInstagram /></a>
-                <a href="https://www.linkedin.com/in/aravinth-subramanium-0290b492/" target="_blank" rel="noopener noreferrer" className="social-icon"><FaLinkedinIn /></a>
-                <a href="https://www.youtube.com/@SriPonniMedicalCentre" target="_blank" rel="noopener noreferrer" className="social-icon"><FaYoutube /></a>
+                <a href="#" className="social-icon"><FaFacebookF /></a>
+                <a href="#" className="social-icon"><FaInstagram /></a>
+                <a href="#" className="social-icon"><FaLinkedinIn /></a>
+                <a href="#" className="social-icon"><FaYoutube /></a>
               </div>
             </div>
 
@@ -37,7 +40,7 @@ const Footer = () => {
               <h4 className="footer-col-title">Our Services</h4>
               <ul className="footer-links">
                 <li><Link to="/services">Emergency Care</Link></li>
-                <li><Link to="/services">Diagnostics & Labs</Link></li>
+                <li><Link to="/services">Diagnostics & Imaging</Link></li>
                 <li><Link to="/services">General Medicine</Link></li>
                 <li><Link to="/services">Orthopaedics</Link></li>
                 <li><Link to="/services">Pediatrics</Link></li>
@@ -72,7 +75,7 @@ const Footer = () => {
                 <FaEnvelope className="footer-contact-icon" />
                 <div className="footer-contact-text">
                   <span className="highlight">Email Address</span>
-                  <p>sriponnimedicalcentre@gmail.com</p>
+                  <p>info@ethiquehospitals.com</p>
                 </div>
               </div>
               <div className="footer-contact-item">
@@ -89,7 +92,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p className="copyright">
-            © {new Date().getFullYear()} Sri Ponni Medical Centre. All Rights Reserved.
+            © {new Date().getFullYear()} Ethique Hospitals. All Rights Reserved.
           </p>
           <div className="footer-bottom-links">
             <Link to="/privacy">Privacy Policy</Link>

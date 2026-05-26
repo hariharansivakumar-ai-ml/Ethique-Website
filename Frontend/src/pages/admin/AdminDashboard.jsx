@@ -47,7 +47,7 @@ const AdminDashboard = () => {
     >
       <div className="flex justify-between items-center">
         <div>
-          <h2 className="text-3xl font-bold text-[#0e3d64]">Blog Dashboard</h2>
+          <h2 className="text-3xl font-bold text-[#103354]">Blog Dashboard</h2>
           <p className="text-gray-500 mt-1">Manage your website's medical articles and updates.</p>
         </div>
         <Link 
@@ -81,7 +81,7 @@ const AdminDashboard = () => {
                       className="w-12 h-12 rounded-lg object-cover"
                     />
                     <div>
-                      <div className="font-bold text-[#0e3d64] group-hover:text-primary transition-colors">{blog.title}</div>
+                      <div className="font-bold text-[#103354] group-hover:text-primary transition-colors">{blog.title}</div>
                       <div className="text-sm text-gray-400">By {blog.author}</div>
                     </div>
                   </div>

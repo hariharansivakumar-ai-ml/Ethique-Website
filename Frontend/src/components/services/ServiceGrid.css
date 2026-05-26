@@ -13,7 +13,7 @@
 }
 
 .service-card:hover h3 {
-    color: var(--primary-color, #0e548a);
+    color: var(--primary-color, #103354);
 }
 
 .service-card p {

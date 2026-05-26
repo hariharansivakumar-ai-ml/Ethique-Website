@@ -55,7 +55,7 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center px-4">
-          <h2 className="text-4xl font-black text-[#0e3d64] mb-4">Post Not Found</h2>
+          <h2 className="text-4xl font-black text-[#103354] mb-4">Post Not Found</h2>
           <p className="text-gray-500 mb-8">The article you are looking for might have been moved or deleted.</p>
           <Link to="/blog" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full font-bold shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
             <FiArrowLeft /> Return to Blog
@@ -166,7 +166,7 @@ const BlogPost = () => {
             <div className="bg-white rounded-2xl p-6 shadow-[0_2px_16px_rgba(0,0,0,0.06)] border border-gray-50">
               <h3 className="text-lg font-bold text-gray-900 mb-2">Book an Appointment</h3>
               <p className="text-sm text-gray-500 mb-6">Ready to prioritize your health? Book a session with our specialists.</p>
-              <Link to="/contact" aria-label="Book a health consultation session" className="block w-full py-3 bg-primary text-white text-center rounded-xl font-medium shadow-sm hover:bg-[#0e3d64] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+              <Link to="/contact" aria-label="Book a health consultation session" className="block w-full py-3 bg-primary text-white text-center rounded-xl font-medium shadow-sm hover:bg-[#103354] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
                 Book Consultation
               </Link>
             </div>

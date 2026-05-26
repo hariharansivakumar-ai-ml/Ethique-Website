@@ -36,12 +36,12 @@ const AboutValues = () => {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <span className="values-subtitle">OUR VALUE</span>
+                            <span className="values-subtitle">OUR CORE VALUES</span>
                             <h2 className="values-main-title mt-4">
-                                Upholding Excellence, Empathy, and Integrity in Every Patient Journey
+                                Driven By Care, <br /> Integrity & Excellence
                             </h2>
                             <p className="text-gray-500 text-lg mt-6 leading-relaxed">
-                                Our commitment extends beyond medicine. We strive to create a healing environment where every individual feels supported and understood.
+                                At Ethique Hospitals, our values guide every interaction, treatment, and patient experience. We believe healthcare should combine medical excellence with empathy, respect, and trust.
                             </p>
                         </motion.div>
 
@@ -75,7 +75,7 @@ const AboutValues = () => {
                                 </div>
                                 <div className="value-text-box">
                                     <h3>Our Vision</h3>
-                                    <p>Our vision is to bring world-class medical care closer to home, where every patient is treated with kindness, dignity, and personalized attention.</p>
+                                    <p>To become a trusted healthcare destination known for advanced medical care, compassionate treatment, and a commitment to improving the health and well-being of every community we serve.</p>
                                 </div>
                             </motion.div>
 
@@ -93,7 +93,7 @@ const AboutValues = () => {
                                 </div>
                                 <div className="value-text-box">
                                     <h3>Our Mission</h3>
-                                    <p>We are committed to fostering hope, strength, and well-being, while training the next generation of medical professionals in excellence.</p>
+                                    <p>To provide accessible, ethical, and high-quality healthcare services through skilled professionals, modern technology, and patient-focused medical care that prioritizes safety, comfort, and recovery.</p>
                                 </div>
                             </motion.div>
                         </motion.div>

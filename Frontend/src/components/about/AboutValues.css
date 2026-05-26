@@ -22,7 +22,7 @@
 }
 
 .values-subtitle {
-    color: #13a078; /* Professional medical green */
+    color: #376e80; /* Professional medical green */
     font-weight: 800;
     font-size: 14px;
     letter-spacing: 2px;
@@ -32,7 +32,7 @@
 .values-main-title {
     font-size: 36px;
     font-weight: 700;
-    color: #0e548a;
+    color: #103354;
     line-height: 1.2;
     margin-bottom: 24px;
 }
@@ -63,7 +63,7 @@
     width: 70px;
     height: 70px;
     background-color: #f0f4f8;
-    color: #0e548a;
+    color: #103354;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -78,7 +78,7 @@
 }
 
 .value-card:hover .value-icon-box {
-    background-color: #0e548a;
+    background-color: #103354;
     color: white;
 }
 
@@ -89,7 +89,7 @@
 .value-text-box h3 {
     font-size: 22px;
     font-weight: 800;
-    color: #0e3d64;
+    color: #103354;
     margin-bottom: 8px;
 }
 

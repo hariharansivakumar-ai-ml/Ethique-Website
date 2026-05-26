@@ -35,7 +35,7 @@ const AboutSection = () => {
               className="about-subtitle"
             >
               <span className="dot"></span>
-              Start Your Recovery With Us
+              Advanced Healthcare Solutions & Modern Medical Technology
             </motion.div>
             
             <motion.h2 
@@ -43,18 +43,18 @@ const AboutSection = () => {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
               }}
-              className="text-4xl md:text-5xl font-bold leading-tight mb-8 text-[#0e548a]"
+              className="text-4xl md:text-5xl font-bold leading-tight mb-8 text-[#103354]"
             >
               {/* Desktop View */}
               <span className="hidden md:block">
-                Expert Medical Care Team <br />
-                & Advanced Technology
+                Begin Your Healing Journey <br />
+                With Trusted Medical Experts
               </span>
               {/* Mobile View */}
               <span className="block md:hidden">
-                Expert Medical Care <br />
-                Team & Advanced <br />
-                Technology
+                Begin Your Healing Journey <br />
+                With Trusted Medical <br />
+                Experts
               </span>
             </motion.h2>
             
@@ -65,7 +65,7 @@ const AboutSection = () => {
               }}
               className="text-slate-500 text-lg leading-relaxed max-w-2xl mb-6"
             >
-              Our caring doctors are here to support you every step of the way. We provide personalized care in a warm and friendly environment. Your health and comfort are our top priorities.
+              At Ethique Hospitals, we are dedicated to delivering exceptional healthcare services in a safe, caring, and patient-focused environment. Our expert doctors, skilled nursing staff, and advanced medical facilities ensure every patient receives personalized attention and high-quality treatment.
             </motion.p>
 
             <motion.p 
@@ -75,7 +75,7 @@ const AboutSection = () => {
               }}
               className="text-slate-500 text-lg leading-relaxed max-w-2xl mb-6"
             >
-              Expert care that helps you heal. Treatments focused on your health and comfort. A warm, welcoming place for every visit. Support you can trust throughout your journey. Our emergency and ICU teams provide expert treatment with kindness, and our operation theatre has advanced equipment for safe and precise surgeries.
+              From emergency care and diagnostics to specialized treatments and surgical procedures, we provide complete healthcare solutions designed to support your recovery, comfort, and long-term wellness.
             </motion.p>
 
             <motion.p 
@@ -85,9 +85,9 @@ const AboutSection = () => {
               }}
               className="text-slate-500 text-md leading-relaxed max-w-2xl mb-8 italic italic"
             >
-              Learn more <Link to="/about" className="text-primary hover:underline">about our hospital</Link> and explore our 
-              <Link to="/services" className="text-primary hover:underline ml-1">medical services</Link> in Velur. 
-              For appointments, <Link to="/contact" className="text-primary hover:underline ml-1">contact us today</Link>.
+              Learn more <Link to="/about" className="text-primary hover:underline">about Ethique Hospitals</Link> and discover our 
+              <Link to="/services" className="text-primary hover:underline ml-1">comprehensive healthcare services</Link>. 
+              <Link to="/contact" className="text-primary hover:underline ml-1">Contact us today</Link> to schedule your appointment.
             </motion.p>
 
             <motion.div 
@@ -123,7 +123,7 @@ const AboutSection = () => {
                 transition={{ duration: 0.6, type: "spring", damping: 15 }}
                 className="experience-badge"
               >
-                <span className="experience-years">20</span>
+                <span className="experience-years">25</span>
                 <span className="experience-text">Years <br /> Experience</span>
               </motion.div>
 

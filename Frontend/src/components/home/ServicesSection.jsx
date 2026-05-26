@@ -21,43 +21,43 @@ import "./ServicesSection.css";
 const services = [
   {
     title: "Emergency Care",
-    desc: "24/7 medical support for accidents, injuries, and sudden health problems. With quick response, advanced equipment, and experienced doctors, emergencies are handled with speed, safety, and expert care to stabilize patients, prevent complications, and protect lives.",
+    desc: "24/7 emergency medical support with rapid response teams, advanced monitoring systems, and expert critical care treatment for urgent medical conditions.",
     icon: <FaAmbulance />,
     image: emergencyImg
   },
   {
-    title: "Diagnostics & Labs",
-    desc: "Advanced imaging services including X-rays, CT scans, MRI, and ultrasound for accurate diagnosis and treatment planning. Expert radiologists use modern technology to detect conditions early, monitor progress, and guide effective medical care for patients.",
+    title: "Diagnostics & Imaging",
+    desc: "Modern diagnostic and imaging services including scans, laboratory testing, and advanced screening for accurate and early medical evaluation.",
     icon: <FaMicroscope />,
     image: diagnosticsImg
   },
   {
     title: "General Medicine",
-    desc: "Caring for everyday health needs, from minor illnesses to chronic conditions. With timely check-ups, accurate diagnosis, and effective treatment, patients receive the right support to recover quickly, maintain good health, and prevent future problems.",
+    desc: "Comprehensive treatment and preventive care for common illnesses, chronic conditions, and overall health management.",
     icon: <FaStethoscope />,
     image: consultationImg
   },
   {
     title: "Cardiology",
-    desc: "Cardiology focuses on the diagnosis and treatment of heart problems, from routine check-ups to advanced care. Using modern tests and proven treatments, the team works to improve heart health, manage risks, and support patients through every stage of recovery.",
+    desc: "Advanced heart care services focused on diagnosis, treatment, prevention, and recovery for cardiovascular conditions.",
     icon: <FaHeartbeat />,
     image: cardiologyImg
   },
   {
     title: "Orthopaedics",
-    desc: "Specialized in treating injuries and conditions affecting bones, joints, and muscles. Whether it’s a fracture, joint pain, or a sports injury, care is given using advanced diagnostics, modern therapies, and surgical expertise to help patients regain strength and move comfortably.",
+    desc: "Specialized care for bone, joint, muscle, and spine conditions using modern therapies and surgical expertise.",
     icon: <FaBone />,
     image: orthopaedicsImg
   },
   {
     title: "Pediatrics",
-    desc: "Care for babies, children, and teens to keep them healthy and growing strong. Services include regular check-ups, vaccinations, illness treatment, and growth tracking. With gentle care, early diagnosis, and a focus on overall well-being, children are supported at every stage of development.",
+    desc: "Gentle and specialized healthcare services for infants, children, and adolescents focused on healthy growth and development.",
     icon: <FaChild />,
     image: pediatricsImg
   },
   {
     title: "Neurology",
-    desc: "Care for brain, spine, and nerve-related problems such as headaches, stroke, seizures, and movement disorders. With modern scans, expert guidance, and tailored treatment, the goal is to relieve symptoms, improve daily function, and support long-term health.",
+    desc: "Expert care for neurological disorders affecting the brain, nerves, and spine using advanced diagnostic technology and personalized treatment.",
     icon: <FaBrain />,
     image: neurologyImg
   }
@@ -111,7 +111,7 @@ const ServicesSection = () => {
               className="services-subtitle"
             >
               <span className="dot"></span>
-              Our Services
+              Our Medical Services
             </motion.span>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -120,8 +120,8 @@ const ServicesSection = () => {
               transition={{ delay: 0.1 }}
               className="services-main-title text-left"
             >
-              <span className="text-[#0e548a]">We Offer For You Medical &</span> <br />
-              <span className="text-[#0e548a]">Saving Lives</span>
+              <span className="text-[#103354]">Comprehensive Healthcare</span> <br />
+              <span className="text-[#103354]">Focused On Saving Lives</span>
             </motion.h2>
           </div>
 
@@ -193,7 +193,7 @@ const ServicesSection = () => {
           viewport={{ once: true }}
           className="services-footer-btn flex justify-center mt-12"
         >
-          <Link to="/services" className="btn-appointment bg-[#0e548a] hover:bg-[#0d4a7a] text-sm px-10 py-4 shadow-xl">
+          <Link to="/services" className="btn-appointment bg-[#103354] hover:bg-[#082c4e] text-sm px-10 py-4 shadow-xl">
             OUR SERVICES
           </Link>
         </motion.div>

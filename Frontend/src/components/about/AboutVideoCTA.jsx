@@ -21,7 +21,7 @@ const AboutVideoCTA = () => {
                     {/* Left: Play Button Area */}
                     <div className="lg:w-1/2 flex justify-center lg:justify-start">
                         <motion.a
-                            href="https://www.youtube.com/@SriPonniMedicalCentre"
+                            href="#"
                             target="_blank"
                             rel="noopener noreferrer"
                             initial={{ scale: 0.8, opacity: 0 }}
@@ -51,13 +51,13 @@ const AboutVideoCTA = () => {
                             className="space-y-4"
                         >
                             <div className="flex items-center gap-3 justify-center lg:justify-start">
-                                <span className="text-[#13a078] font-black text-xs uppercase tracking-[0.2em]">Our Watch Video</span>
+                                <span className="text-[#376e80] font-black text-xs uppercase tracking-[0.2em]">Experience Ethique Hospitals</span>
                             </div>
                             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                                Professional Medical Care <br className="hidden md:block" /> Measure Medical.
+                                Modern Healthcare <br className="hidden md:block" /> Focused On Patient Wellness
                             </h2>
                             <p className="text-white/70 text-lg leading-relaxed max-w-xl">
-                                We are privileged to work with hundreds of future-thinking medial, including many of the world's top hardware, software, and brands, feel safe and comfortable in establishing.
+                                Our dedicated healthcare professionals, advanced medical infrastructure, and compassionate care approach ensure every patient receives the highest standard of treatment in a comfortable and supportive environment.
                             </p>
                         </motion.div>
 

@@ -9,7 +9,7 @@ function placeholder(name) {
         transition={{ duration: 0.8, ease: "easeOut" }}
         style={{ minHeight: "60vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "12px" }}
       >
-        <h1 style={{ fontFamily: "var(--font-heading)", color: "#0e548a", fontSize: "2.5rem" }}>{name}</h1>
+        <h1 style={{ fontFamily: "var(--font-heading)", color: "#103354", fontSize: "2.5rem" }}>{name}</h1>
         <p style={{ color: "#64748b" }}>This page is coming soon.</p>
       </motion.div>
     );

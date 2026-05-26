@@ -182,7 +182,7 @@ const BlogEditor = () => {
           <FiArrowLeft />
           Back to Dashboard
         </Link>
-        <h2 className="text-2xl font-bold text-[#0e3d64]">
+        <h2 className="text-2xl font-bold text-[#103354]">
           {isEditing ? "Edit Blog Post" : "Create New Blog Post"}
         </h2>
       </div>
@@ -298,7 +298,7 @@ const BlogEditor = () => {
 
         {/* SEO Settings Section */}
         <div className="border-t border-gray-150 pt-8 space-y-6">
-          <h3 className="text-xl font-bold text-[#0e3d64] flex items-center gap-2">
+          <h3 className="text-xl font-bold text-[#103354] flex items-center gap-2">
             <span className="w-2.5 h-6 bg-primary rounded-full"></span>
             SEO & Search Settings
           </h3>
@@ -331,7 +331,7 @@ const BlogEditor = () => {
                   />
                 </svg>
                 <div className="absolute flex flex-col items-center justify-center">
-                  <span className="text-3xl font-extrabold text-[#0e3d64]">{calculatedScore}</span>
+                  <span className="text-3xl font-extrabold text-[#103354]">{calculatedScore}</span>
                   <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">SEO Score</span>
                 </div>
               </div>
@@ -349,7 +349,7 @@ const BlogEditor = () => {
 
             {/* Checklist */}
             <div className="md:col-span-2 space-y-3">
-              <h4 className="text-sm font-bold text-[#0e3d64] uppercase tracking-wider">SEO Checklist</h4>
+              <h4 className="text-sm font-bold text-[#103354] uppercase tracking-wider">SEO Checklist</h4>
               <div className="space-y-2 max-h-[160px] overflow-y-auto pr-2">
                 {seoChecks.map((check, idx) => (
                   <div key={idx} className="flex items-start gap-2.5 text-sm text-left w-full">

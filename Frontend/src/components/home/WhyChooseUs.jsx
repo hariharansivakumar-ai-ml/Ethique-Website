@@ -6,23 +6,23 @@ import chooseImg from '../../assets/why_choose_us.webp'; // Updated with unique 
 const features = [
     {
         icon: <FiUsers />,
-        title: "Expert Medical Team",
-        desc: "Our doctors are highly qualified specialists with years of experience in their respective fields."
+        title: "Experienced Specialists",
+        desc: "Our skilled doctors and healthcare professionals provide expert treatment across multiple medical specialties."
     },
     {
         icon: <FiClock />,
-        title: "24/7 Emergency Care",
-        desc: "We provide round-the-clock medical support to handle any emergency with speed and care."
+        title: "24/7 Emergency Support",
+        desc: "Round-the-clock emergency care ensures immediate medical attention whenever you need it most."
     },
     {
         icon: <FiShield />,
-        title: "Patient-Focused Care",
-        desc: "Your comfort and well-being are our top priorities. We treat every patient like family."
+        title: "Patient-Centered Care",
+        desc: "We focus on personalized treatment plans designed around each patient’s comfort, safety, and recovery."
     },
     {
         icon: <FiCheck />,
-        title: "Modern Facilities",
-        desc: "Equipped with the latest medical technology to provide accurate diagnosis and treatment."
+        title: "Advanced Medical Facilities",
+        desc: "Equipped with modern medical technology for accurate diagnosis, treatment, and surgical precision."
     }
 ];
 
@@ -41,13 +41,12 @@ const WhyChooseUs = () => {
                             transition={{ duration: 0.8 }}
                             className="space-y-4"
                         >
-                            <span className="text-[#13a078] font-black text-xs uppercase tracking-widest block">Why Choose Us</span>
-                            <h2 className="text-4xl md:text-5xl font-bold text-[#0e548a] leading-tight">
-                                Your Most Trusted <br /> Healthcare Partner
+                            <span className="text-[#376e80] font-black text-xs uppercase tracking-widest block">OUR HEALTHCARE PROMISE</span>
+                            <h2 className="text-4xl md:text-5xl font-bold text-[#103354] leading-tight">
+                                Why Choose <br /> Ethique Hospitals
                             </h2>
                             <p className="text-gray-500 text-lg leading-relaxed">
-                                We combine medical excellence with compassionate care to provide 
-                                the best healthcare experience for our patients and their families.
+                                We combine medical excellence, compassionate care, and modern technology to provide patients with trusted healthcare services and a comfortable healing experience.
                             </p>
                         </motion.div>
 
@@ -61,11 +60,11 @@ const WhyChooseUs = () => {
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     className="flex gap-4 group"
                                 >
-                                    <div className="w-12 h-12 shrink-0 bg-[#ebf7f4] text-[#13a078] rounded-xl flex items-center justify-center text-xl group-hover:bg-[#13a078] group-hover:text-white transition-all duration-300">
+                                    <div className="w-12 h-12 shrink-0 bg-[#eef5f7] text-[#376e80] rounded-xl flex items-center justify-center text-xl group-hover:bg-[#376e80] group-hover:text-white transition-all duration-300">
                                         {feature.icon}
                                     </div>
                                     <div>
-                                        <h3 className="text-xl font-bold text-[#0e548a] mb-2">{feature.title}</h3>
+                                        <h3 className="text-xl font-bold text-[#103354] mb-2">{feature.title}</h3>
                                         <p className="text-gray-500 text-sm leading-relaxed">{feature.desc}</p>
                                     </div>
                                 </motion.div>
@@ -82,11 +81,11 @@ const WhyChooseUs = () => {
                         className="lg:w-1/2 relative"
                     >
                         <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
-                            <img src={chooseImg} alt="Why Choose Sri Ponni" className="w-full h-auto" />
+                            <img src={chooseImg} alt="Why Choose Ethique Hospitals" className="w-full h-auto" />
                         </div>
                         {/* Decorative circles */}
                         <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full -z-10 blur-3xl" />
-                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#13a078]/10 rounded-full -z-10 blur-3xl" />
+                        <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#376e80]/10 rounded-full -z-10 blur-3xl" />
                     </motion.div>
 
                 </div>

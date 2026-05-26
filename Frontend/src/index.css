@@ -3,10 +3,13 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-primary: #0e548a;
-  --color-primary-dark: #0d4a7a;
+  --color-primary: #103354;
+  --color-primary-dark: #082c4e;
+  --color-primary-light: #f0f4f8;
+  --color-accent: #376e80;
+  --color-accent-light: #eef5f7;
   --color-dark: #0F172A;
-  --color-teal-light: #CCFBF1;
+  --color-teal-light: #eef5f7;
 
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-heading: 'Outfit', sans-serif;
@@ -26,7 +29,7 @@
 
 @layer components {
   .btn-appointment {
-    @apply px-5 py-2.5 bg-[#0e548a] text-white font-bold rounded-full hover:bg-[#0d4a7a] transition-all duration-300 flex items-center gap-2 text-xs uppercase tracking-widest;
+    @apply px-5 py-2.5 bg-[#103354] text-white font-bold rounded-full hover:bg-[#082c4e] transition-all duration-300 flex items-center gap-2 text-xs uppercase tracking-widest;
   }
 
   .btn-blue {

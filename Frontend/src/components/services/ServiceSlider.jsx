@@ -149,8 +149,8 @@ const ServiceSlider = () => {
             <div className="container mx-auto px-4 lg:px-20 relative">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="space-y-4 max-w-2xl">
-                        <span className="text-[#13a078] font-bold uppercase tracking-widest text-sm">Main Specialties</span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#0e3d64]">Our Medical Services</h2>
+                        <span className="text-[#376e80] font-bold uppercase tracking-widest text-sm">Main Specialties</span>
+                        <h2 className="text-4xl md:text-5xl font-bold text-[#103354]">Our Medical Services</h2>
                         <p className="text-gray-500 text-lg leading-relaxed">
                             Explore our comprehensive range of specialized departments, each dedicated 
                             to providing expert care with compassion and precision.
@@ -185,10 +185,10 @@ const ServiceSlider = () => {
                             key={index}
                             className="service-slide-card min-w-[320px] md:min-w-[400px] snap-start bg-white p-10 rounded-[32px] shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100 flex flex-col h-[400px]"
                         >
-                            <div className="service-icon-box-green w-20 h-20 bg-[#ebf7f4] text-[#13a078] rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:bg-[#13a078] group-hover:text-white transition-all duration-500">
+                            <div className="service-icon-box-green w-20 h-20 bg-[#eef5f7] text-[#376e80] rounded-2xl flex items-center justify-center text-4xl mb-8 group-hover:bg-[#376e80] group-hover:text-white transition-all duration-500">
                                 {service.icon}
                             </div>
-                            <h3 className="text-2xl font-bold text-[#0e3d64] mb-4 group-hover:text-[#13a078] transition-colors">
+                            <h3 className="text-2xl font-bold text-[#103354] mb-4 group-hover:text-[#376e80] transition-colors">
                                 {service.title}
                             </h3>
                             <p className="text-gray-500 leading-relaxed text-[15px] overflow-hidden">

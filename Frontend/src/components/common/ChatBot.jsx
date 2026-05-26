@@ -113,7 +113,7 @@ const ChatBot = () => {
                                             whileHover={{ scale: 1.02, x: 5 }}
                                             whileTap={{ scale: 0.98 }}
                                             onClick={() => handleQuestionClick(q)}
-                                            className="w-full text-left p-4 bg-white border border-gray-100 rounded-xl text-xs font-bold text-[#0e548a] shadow-sm hover:border-primary hover:shadow-md transition-all flex items-center justify-between group"
+                                            className="w-full text-left p-4 bg-white border border-gray-100 rounded-xl text-xs font-bold text-[#103354] shadow-sm hover:border-primary hover:shadow-md transition-all flex items-center justify-between group"
                                         >
                                             {q.question}
                                             <FiChevronLeft className="rotate-180 opacity-0 group-hover:opacity-100 transition-opacity" />

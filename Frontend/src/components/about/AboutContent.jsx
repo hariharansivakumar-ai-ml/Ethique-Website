@@ -40,8 +40,8 @@ const AboutContent = () => {
                                 className="experience-badge-circular"
                             >
                                 <div className="badge-inner">
-                                    <span className="years">26+</span>
-                                    <span className="text">Experience</span>
+                                    <span className="years">25</span>
+                                    <span className="text">Years <br /> Experience</span>
                                 </div>
                             </motion.div>
                             
@@ -87,10 +87,10 @@ const AboutContent = () => {
                             className="space-y-4"
                         >
                             <div className="section-tag flex items-center gap-3">
-                                <span className="text-[#13a078] font-black text-xs uppercase tracking-widest">About Our Centre</span>
+                                <span className="text-[#376e80] font-black text-xs uppercase tracking-widest">ABOUT ETHIQUE HOSPITALS</span>
                             </div>
                             <h2 className="about-main-title">
-                                Delivering Excellence <br /> In Healthcare <br /> Since Decades.
+                                Transforming Healthcare <br /> With Compassion & Trust
                             </h2>
                             <div className="space-y-6 text-gray-500 text-lg leading-relaxed">
                                 <motion.p 
@@ -99,7 +99,7 @@ const AboutContent = () => {
                                         visible: { opacity: 1, y: 0 }
                                     }}
                                 >
-                                    At Sri Ponni Medical Centre, we believe that healthcare is not just about treating illnesses—it’s about caring for people with compassion, trust, and expertise. Our journey began with a simple yet powerful dream: to bring world-class medical care closer to home, ensuring that every patient who walks through our doors receives the best possible treatment with kindness and dignity.
+                                    Ethique Hospitals is committed to providing exceptional healthcare services through advanced medical expertise, patient-centered treatment, and compassionate support. Our multidisciplinary team of specialists works together to ensure every patient receives personalized care in a safe and modern healing environment.
                                 </motion.p>
                                 <motion.p 
                                     variants={{
@@ -107,18 +107,7 @@ const AboutContent = () => {
                                         visible: { opacity: 1, y: 0 }
                                     }}
                                 >
-                                    For us, every heartbeat matters, every smile tells a story, and every patient is part of our family. Our team of highly skilled doctors, nurses, and healthcare professionals work hand in hand, not just to heal but to support, guide, and stand by you at every step of your journey to recovery.
-                                </motion.p>
-                                <motion.p 
-                                    variants={{
-                                        hidden: { opacity: 0, y: 20 },
-                                        visible: { opacity: 1, y: 0 }
-                                    }}
-                                    className="text-sm italic"
-                                >
-                                    Sri Ponni Medical Center is one of the most trusted hospitals in Velur. 
-                                    Check our <Link to="/services" className="text-primary hover:underline ml-1">services</Link> or 
-                                    <Link to="/contact" className="text-primary hover:underline ml-1">book an appointment</Link>.
+                                    With state-of-the-art facilities, advanced diagnostics, and a strong focus on clinical excellence, we continue to deliver quality healthcare solutions that improve lives and promote long-term wellness for individuals and families.
                                 </motion.p>
                             </div>
                         </motion.div>

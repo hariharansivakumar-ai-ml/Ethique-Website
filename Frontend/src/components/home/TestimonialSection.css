@@ -28,7 +28,7 @@
 .testimonial-title {
   font-size: 36px;
   font-weight: 700;
-  color: #0e548a;
+  color: #103354;
   line-height: 1.2;
 }
 
@@ -113,7 +113,7 @@
 }
 
 .thumb-item.active {
-  border-color: #0e548a;
+  border-color: #103354;
   transform: scale(1.1);
 }
 
@@ -177,12 +177,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #0e548a;
+  color: #103354;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
-  background-color: #0e548a;
+  background-color: #103354;
   color: white;
 }

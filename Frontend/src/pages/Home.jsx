@@ -10,9 +10,9 @@ function Home() {
   return (
     <div className="bg-[#f8fafc] min-h-screen font-sans">
       <SEO
-        title="Best Hospital in Velur | Sri Ponni Medical Center"
-        description="Sri Ponni Medical Center is the best hospital in Velur offering affordable and high-quality healthcare with expert doctors and 24/7 emergency services."
-        keywords="Hospital in Velur, Best Hospital Velur, 24/7 Hospital Velur"
+        title="Best Hospital in Velur | Ethique Hospitals"
+        description="Ethique Hospitals is the best hospital in Velur offering affordable and high-quality healthcare with expert doctors and 24/7 emergency services."
+        keywords="Hospital in Velur, Best Hospital Velur, 24/7 Hospital Velur, Ethique Hospitals"
       />
       
       <div className="sr-only">

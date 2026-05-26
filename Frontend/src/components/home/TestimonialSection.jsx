@@ -9,22 +9,22 @@ import "./TestimonialSection.css";
 
 const testimonials = [
   {
-    name: "Karthikeyan S",
-    label: "Happy Patient",
+    name: "Arun Prakash",
+    label: "Satisfied Patient",
     image: p1,
-    text: "The medical team at Sri Ponni is very professional and caring. They treated my father with great patience and the hospital was very clean and well maintained."
+    text: "The doctors and staff at Ethique Hospitals provided exceptional care and support throughout the treatment process. The facilities were clean, modern, and very comfortable."
   },
   {
-    name: "Meenakshi Ramasamy",
-    label: "Happy Patient",
+    name: "Arun Prakash",
+    label: "Satisfied Patient",
     image: p2,
-    text: "I had a very good experience with the surgery here. The cost was reasonable compared to other big hospitals and the doctors provided excellent care throughout my stay."
+    text: "The doctors and staff at Ethique Hospitals provided exceptional care and support throughout the treatment process. The facilities were clean, modern, and very comfortable."
   },
   {
-    name: "Saravanan K",
-    label: "Happy Patient",
+    name: "Arun Prakash",
+    label: "Satisfied Patient",
     image: p3,
-    text: "We always visit Sri Ponni for our children's health needs. The doctors are expert and the staff is very friendly, making the hospital visit easy and stress-free for us."
+    text: "The doctors and staff at Ethique Hospitals provided exceptional care and support throughout the treatment process. The facilities were clean, modern, and very comfortable."
   }
 ];
 
@@ -55,7 +55,7 @@ const TestimonialSection = () => {
             className="testimonial-subtitle"
           >
             <span className="dot"></span>
-            Our Service & Testimonial
+            Trusted Care & Positive Recovery Stories
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
@@ -64,7 +64,7 @@ const TestimonialSection = () => {
             transition={{ delay: 0.1 }}
             className="testimonial-title"
           >
-            Service & Reviews
+            Patient Experiences
           </motion.h2>
         </div>
 

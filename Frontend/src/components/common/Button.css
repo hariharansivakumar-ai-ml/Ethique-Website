@@ -16,11 +16,11 @@
 .btn--primary {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: var(--white);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 4px 14px rgba(16, 51, 84, 0.35);
 }
 .btn--primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+  box-shadow: 0 6px 20px rgba(16, 51, 84, 0.45);
 }
 
 .btn--secondary {
