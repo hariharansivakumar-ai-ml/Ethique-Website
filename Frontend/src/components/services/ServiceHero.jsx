@@ -1,15 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import heroBg from '../../assets/indian_services_hero_consultation.webp';
+import heroBg from '../../assets/Service_Hero.jpeg';
 import './ServiceHero.css';
 
 const ServiceHero = ({ title, subtitle, description, bottomText }) => {
   return (
-    <section className="relative min-h-[50vh] md:min-h-[78vh] flex items-center px-4 sm:px-8 mb-6 overflow-hidden">
+    <section className="relative min-h-[60vh] md:min-h-[88vh] flex items-center px-4 sm:px-8 mb-6 overflow-hidden">
 
       {/* Background Container — rounded card exactly like Home hero */}
-      <div className="absolute inset-x-4 sm:inset-x-8 top-4 bottom-0 rounded-[4rem] overflow-hidden shadow-2xl bg-[#0a1a2f]">
+      <div className="absolute inset-x-4 sm:inset-x-8 top-4 bottom-0 rounded-[4rem] overflow-hidden shadow-2xl bg-black">
         <motion.div
           initial={{ opacity: 0, scale: 1.08 }}
           animate={{ opacity: 1, scale: 1.05 }}
@@ -19,15 +19,12 @@ const ServiceHero = ({ title, subtitle, description, bottomText }) => {
           <img
             src={heroBg}
             alt={title}
-            className="w-full h-full object-cover grayscale-[10%] sepia-[5%] mix-blend-multiply"
+            className="w-full h-full object-cover"
             style={{ objectPosition: 'center center' }}
           />
 
-          {/* Blue Shade Overlay */}
-          <div className="absolute inset-0 bg-blue-900/30 mix-blend-overlay" />
-
-          {/* Blue Gradient Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/90 via-blue-900/50 to-transparent" />
+          {/* Dark Gradient Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
         </motion.div>
       </div>
 
@@ -40,7 +37,7 @@ const ServiceHero = ({ title, subtitle, description, bottomText }) => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.2] tracking-tight drop-shadow-lg"
+            className="text-3xl md:text-5xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight drop-shadow-lg"
           >
             {title}
           </motion.h1>

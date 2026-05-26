@@ -3,7 +3,7 @@ import AboutContent from '../components/about/AboutContent';
 import AboutValues from '../components/about/AboutValues';
 import AboutVideoCTA from '../components/about/AboutVideoCTA';
 import FaqSection from '../components/common/FaqSection';
-import aboutHeroImg from '../assets/about Hero.webp';
+import aboutHeroImg from '../assets/About us hero.jpeg';
 import './About.css';
 
 const aboutFaqs = [

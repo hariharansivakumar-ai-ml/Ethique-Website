@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiPhone, FiArrowUpRight, FiMenu, FiX, FiMail } from "react-icons/fi";
-import logoImg from "../assets/Ethique Hospital Logo.jpeg";
+import logoImg from "../assets/Ethique_Hospital_Logo-bg.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);

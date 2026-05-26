@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiLock, FiUser, FiArrowRight } from 'react-icons/fi';
-import logoImg from '../../assets/Ethique Hospital Logo.jpeg';
+import logoImg from '../../assets/Ethique_Hospital_Logo-bg.png';
 import { blogService } from '../../services/blogService';
 
 const Login = () => {

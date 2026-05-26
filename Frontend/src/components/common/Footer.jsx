@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaYoutube } from "react-icons/fa";
-import logoImg from "../../assets/Ethique Hospital Logo.jpeg";
+import logoImg from "../../assets/Ethique_Hospital_Logo-bg.png";
 import "./Footer.css";
 
 const Footer = () => {
@@ -10,9 +10,9 @@ const Footer = () => {
         
         {/* Appointment CTA Overlap */}
         <div className="newsletter-box flex flex-col items-center justify-center text-center">
-          <h3 className="newsletter-title">Get Trusted Medical Care <br /> At Ethique Hospitals</h3>
+          <h3 className="newsletter-title">Get Trusted Medical Care At Ethique Hospitals</h3>
           <p className="text-white/80 text-sm max-w-2xl mt-2 leading-relaxed">
-            Ethique Hospitals is committed to delivering safe, compassionate, and advanced healthcare services with a strong focus on patient comfort and medical excellence.
+            Delivering safe, advanced, and compassionate healthcare with clinical excellence.
           </p>
         </div>
 

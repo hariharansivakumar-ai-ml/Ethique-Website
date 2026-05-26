@@ -47,14 +47,15 @@ const AboutSection = () => {
             >
               {/* Desktop View */}
               <span className="hidden md:block">
-                Begin Your Healing Journey <br />
-                With Trusted Medical Experts
+                Begin Your Healing <br />
+                Journey With Trusted <br />
+                Medical Experts
               </span>
               {/* Mobile View */}
               <span className="block md:hidden">
-                Begin Your Healing Journey <br />
-                With Trusted Medical <br />
-                Experts
+                Begin Your Healing <br />
+                Journey With Trusted <br />
+                Medical Experts
               </span>
             </motion.h2>
             
